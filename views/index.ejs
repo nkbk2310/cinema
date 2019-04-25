@@ -1,11 +1,109 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title><%= title %></title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-  </head>
-  <body>
-    <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
-  </body>
+
+<head>
+  <link rel='stylesheet' href='/stylesheets/style.css' />
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+    integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+
+</head>
+
+<body>
+  <div class="header1">
+    <h1 class="title1">CINEMA APPLICATION</h1>
+  </div>
+  <div class="header2">
+    <!-- <div class="header 3"> -->
+    <h1 class="title2 pull-right">
+      <i class="fas fa-user-plus icon-user"></i>
+      ĐĂNG KÝ
+    </h1>
+    <h1 class="title3 pull-right">
+      <i class="fas fa-sign-out-alt icon-sign-out"></i>
+      ĐĂNG NHẬP
+    </h1>
+    <h1 class="title2 pull-right">
+      <i class="fa fa-upload fa-lg icon-upload"></i>
+      TẠO PHIM MỚI
+    </h1>
+    <i class="fas fa-home icon-home icon"></i>
+    <i class="fas fa-arrow-circle-left icon-back icon"></i>
+    <!-- </div> -->
+
+  </div>
+  <p class="title4">TẠO PHIM MỚI</p>
+  <div class="div-left div-chung">
+
+  </div>
+  <div class="div-right div-chung">
+    <div class="form" class="div-center">
+      <label>Tên bộ phim:</label>
+      <input type="text">
+    </div>
+    <div class="form" class="div-center">
+      <label>Thể loại phim:</label>
+      <select>
+        <option>Tiểu sử lịch sử</option>
+        <option>Lãng mạn tình cảm</option>
+        <option>Khoa học viễn tưởng</option>
+        <option>Huyền bí huyền ảo</option>
+        <option>Phiêu lưu mạo hiểm</option>
+        <option>Phát luật hình sự</option>
+        <option>Chiến tranh cổ trang</option>
+        <option>Hành động</option>
+        <option>Tâm lý</option>
+        <option>Kinh dị</option>
+        <option>Hài hước</option>
+        <option>Hoạt hình</option>
+        <option>Thể thao</option>
+        <option>Kinh điển</option>
+        <option>Vui nhộn</option>
+        <option>Cổ trang</option>
+        <option>Võ thuật</option>
+      </select>
+    </div>
+    <div class="form" class="div-center">
+      <label>Thời gian phát hành:</label>
+      <div class="input-chung1">
+        <select class="text text">
+          <option>Tháng</option>
+          <option>Tháng 1</option>
+          <option>Tháng 2</option>
+          <option>Tháng 3</option>
+          <option>Tháng 4</option>
+          <option>Tháng 5</option>
+          <option>Tháng 6</option>
+          <option>Tháng 7</option>
+          <option>Tháng 8</option>
+          <option>Tháng 9</option>
+          <option>Tháng 10</option>
+          <option>Tháng 11</option>
+          <option>Tháng 12</option>
+        </select>
+        <select class="text text2">
+          <option>Năm</option>
+          <option>Năm 2009</option>
+          <option>Năm 2010</option>
+          <option>Năm 2011</option>
+          <option>Năm 2012</option>
+          <option>Năm 2013</option>
+          <option>Năm 2014</option>
+          <option>Năm 2015</option>
+          <option>Năm 2016</option>
+          <option>Năm 2018</option>
+          <option>Năm 2019</option>
+        </select>
+      </div>
+    </div>
+    <div class="form" class="div-center">
+      <label>Nội dung mô tả:</label>
+      <textarea>Điền thông tin của phim, diễn viên chính, nội dung của phim...</textarea>
+    </div>
+  </div>
+  <div>
+    <i class="fa fa-upload fa-lg"></i>
+    <p class="title5">TẠO PHIM</p>
+  </div>
+</body>
+
 </html>

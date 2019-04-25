@@ -1,8 +1,160 @@
 body {
-  padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  margin: 0;
 }
 
-a {
-  color: #00B7FF;
+.header1{
+  background-color: black;
+  height: 100px;
+  margin: 0;
+  width: 100%;
+  
 }
+
+.title1{
+  color: white;
+  margin: 0;
+  font-size: 40px;
+  line-height: 100px;
+  padding-left: 30px;
+  
+}
+
+.header2{
+  background-color: #636466;
+  height: 25px;
+  padding-right: 20px;
+  padding-left: 25px;
+  
+}
+
+.title2{
+  color: white;
+  font-size: 15px;
+  margin: 0;
+
+}
+
+.title3{
+  color: white;
+  font-size: 15px;
+  margin: 0;
+  /* margin-right: 20px;
+  margin-left: 20px; */
+
+}
+
+.pull-right{
+  float: right;
+  line-height: 25px;
+  margin-left: 10px;
+  margin-right: 10px;
+  padding: 0 10px;
+
+}
+
+.pull-right:hover,
+.icon:hover {
+  background: #dadee8;
+  cursor: pointer;
+  }
+
+.fas{
+  color: white;
+  
+}
+.icon-user{
+  zoom: 1.2;
+}
+.icon-sign-out{
+  zoom: 1.4;
+  position: relative;
+  top: 2px;
+}
+.icon-upload{
+  zoom: 0.9;
+}
+.icon-home{
+  zoom: 1.4;
+}
+.icon-back{
+  zoom: 1.4;
+  margin-left: 15px;
+
+}
+.icon{
+  padding: 0 5px;
+  line-height: 18px !important
+}
+.icon:hover{
+  background: #dadee8;
+}
+.title4{
+  text-align: center;
+  font-size: 30px;
+  color: black;
+  margin-top: 50px
+}
+.div-chung{
+  float: left;
+}
+
+.div-left{
+  width: 40%;
+  height: 100px;
+}
+
+.div-right{
+  width: 60%;
+}
+
+.form{
+  display: grid;
+  margin-top: 15px;
+  font-size: 16px;
+  padding-left: 20%;
+}
+
+.form > input {
+  width: 60%;
+  height: 25px;
+  margin-top: 5px;
+  padding-left: 5px;
+}
+.text{
+  height: 25px;
+  width: 45%;
+  margin-top: 5px;
+  padding-left: 5px;
+}
+.input-chung1{
+  width: 61%;
+}
+.text2{
+  float: right;
+}
+.form > select ,
+.form > div > select{
+  width: 61%;
+  height: 35px;
+  margin-top: 5px;
+  padding-left: 5px;
+  font-size: 14px;
+}
+.form > div > select{
+  width: 45%;
+  height: 35px;
+  margin-top: 5px;
+  padding-left: 5px;
+  font-size: 14px;
+}
+.form > textarea {
+  width: 60%;
+  height: 100px;
+  margin-top: 5px;
+  padding-left: 5px;
+  font-size: 13px;
+  font-style: italic;
+  color: #636466
+}
+.header3{}
