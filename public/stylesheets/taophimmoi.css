@@ -1,3 +1,5 @@
+
+
 html {
   height: 100%;
 }
@@ -9,61 +11,106 @@ body {
    height:100%;
 }
 
-.header1{
-  background-color: #9CAFD9;
-  height: 100px;
-  margin: 0;
+/* header {
+  margin: 0 auto;
   width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: url(http://missiontampa.org/wp-content/uploads/2016/03/mission-tampa-header-background-dark-gray-001.jpg);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
   
 }
 
-.title1{
-  color: white;
+
+.header-logo{
+  transform: scale(0.25);
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+  top: -100px;
+}
+.header-logo:hover {
+  cursor: pointer;
+  } */
+
+.title-link,
+.home-link{
+  text-decoration: none;
+}
+
+/* .header-link-h1{
+  float: left;
+} */
+
+.header1{
   margin: 0;
-  font-size: 40px;
-  line-height: 100px;
-  padding-left: 30px;
+  width: 100%;
+  height: 200px;
+  background-image: url(https://s4isystems.com/wp-content/uploads/2014/11/header-background-2.jpg);
+  background-repeat: no-repeat;
   
+}
+.logo{
+  transform: scale(0.4);
+  display: block;
+  margin: auto;
+  position: relative;
+  top: -111px;
+
 }
 
 .header2{
-  background-color: #65718C;
-  height: 30px;
+  background: linear-gradient(#215769,#033e52);
+  height: 40px;
   padding-right: 20px;
   padding-left: 25px;
   
 }
 
-.title2{
-  color: white;
-  font-size: 15px;
+
+.header2-1{
+  float: right;
+  position: relative;
+  top: 6px;
+}
+
+h1{
+  float: left;
+  color: #0d5669;
   margin: 0;
+  font-size: 18px;
+  line-height: 100px;
+  padding-left: 15px;
+  padding-right: 15px;
 
 }
 
-.title3{
-  color: white;
-  font-size: 15px;
-  margin: 0;
-  /* margin-right: 20px;
-  margin-left: 20px; */
-
-}
-
-.pull-right{
+.h1{
   float: right;
   line-height: 30px;
   margin-left: 10px;
-  margin-right: 10px;
+  margin-right: 10px; 
   padding: 0 10px;
-
+  color: white;
+  font-size: 15px;
+  margin: 0;
+}
+.header2-2{
+  float: left;
+  position: relative;
+  top: 6px;
 }
 
-.pull-right:hover,
-.icon:hover {
+.h1:hover,
+.icon:hover{
   background: #dadee8;
   cursor: pointer;
-  }
+}
 
 .fas{
   color: white;
@@ -92,9 +139,7 @@ body {
   padding: 0 5px;
   line-height: 22px !important
 }
-.icon:hover{
-  background: #dadee8;
-}
+
 .title4{
   text-align: center;
   font-size: 30px;
@@ -128,6 +173,7 @@ body {
   height: 25px;
   margin-top: 5px;
   padding-left: 5px;
+  font-size: 16px;
 }
 .text{
   height: 25px;
@@ -177,7 +223,7 @@ body {
 #tao-phim-btn{
   width: 150px;
   height: 40px;
-  background: linear-gradient(90deg ,#9CAFD9,#8A9BBF);
+  background: linear-gradient(90deg ,#215769,#033e52);
   border-radius: 28px;
   font-size: 18px;
   color: white;
@@ -197,7 +243,7 @@ body {
 #dang-nhap-btn{
   width: 160px;
   height: 40px;
-  background: linear-gradient(90deg ,#9CAFD9,#8A9BBF);
+  background: linear-gradient(90deg ,#215769,#033e52);
   border-radius: 28px;
   font-size: 18px;
   color: white;
@@ -226,7 +272,7 @@ body {
   #chamh-btn{
     width: 280px;
     height: 45px;
-    background: linear-gradient(90deg ,#9CAFD9,#8A9BBF);
+    background: linear-gradient(90deg ,#215769,#033e52);
     border-radius: 28px;
 
     font-size: 18px;
@@ -267,3 +313,15 @@ body {
       text-align: center;
       float: left;
     }
+    
+footer { 
+  margin-top: 30px;
+  float: left;
+  display: block;
+  width: 100%;
+  background:linear-gradient(#215769,#033e52);
+}
+p {
+  color: white;
+  text-align: center;
+}

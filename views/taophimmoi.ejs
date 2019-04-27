@@ -2,40 +2,59 @@
 <html>
 
 <head>
-  <link rel='stylesheet' href='/stylesheets/style.css' />
+  <link rel='stylesheet' href='/stylesheets/taophimmoi.css' />
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
     integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.8/angular.min.js"></script>
 
 </head>
 
-<body>
-  <div class="header1">
-    <h1 class="title1">CINEMA APPLICATION</h1>
-  </div>
-  <div class="header2">
-    <!-- <div class="header 3"> -->
-    <h1 class="title2 pull-right">
-      <i class="fas fa-user-plus icon-user"></i>
-      ĐĂNG KÝ
-    </h1>
-    <h1 class="title3 pull-right">
-      <i class="fas fa-sign-out-alt icon-sign-out"></i>
-      ĐĂNG NHẬP
-    </h1>
-    <h1 class="title2 pull-right">
-      <i class="fa fa-upload fa-lg icon-upload"></i>
-      TẠO PHIM MỚI
-    </h1>
-    <i class="fas fa-home icon-home icon"></i>
-    <i class="fas fa-arrow-circle-left icon-back icon"></i>
-    <!-- </div> -->
-
-  </div>
+<body ng-app="cinema" ng-controller="taophimmoiController">
+  <!-- <header>
+        <img src="/images/Logo-white.png" class="header-logo"> -->
+  <!-- <div class="header-link-h1">
+      <h1>phim mới</h1>
+      <h1>thể loại</h1>
+      <h1>phim lẻ</h1>
+      <h1>phim bộ</h1>
+      <h1>phim chiếu rạp</h1>
+    </div>
+  </header> -->
+  <header>
+    <div class="header1">
+      <img src="/images/Logo-white.png" class="logo" />
+    </div>
+    <div class="header2">
+      <div class="header2-1">
+        <h1 class="h1">
+          <i class=" fas fa-user-plus icon-user"></i>
+          ĐĂNG KÝ
+        </h1>
+        <a href="/dangnhap" class="h1">
+          <h1 class="h1">
+            <i class="fas fa-sign-out-alt icon-sign-out"></i>
+            ĐĂNG NHẬP
+          </h1>
+        </a>
+        <h1 class="h1">
+          <i class="fas fa-upload fa-lg icon-upload"></i>
+          TẠO PHIM MỚI
+        </h1>
+      </div>
+      <div class="header2-2">
+        <a href="/home">
+          <i class="fas fa-home icon-home icon"></i>
+        </a>
+        <i class="fas fa-arrow-circle-left icon-back icon"></i>
+      </div>
+    </div>
+  </header>
 
   <p class="title4">TẠO PHIM MỚI</p>
   <div class="div-left div-chung">
     <div class="img-chamh-div">
-      <img class="img-chamh" src="https://cdn.fstoppers.com/styles/large-16-9/s3/lead/2014/10/dani-diamond-posing-how-to-model-photogaphy-best-top-fstoppersb.jpg" />
+      <img class="img-chamh"
+        src="https://cdn.fstoppers.com/styles/large-16-9/s3/lead/2014/10/dani-diamond-posing-how-to-model-photogaphy-best-top-fstoppersb.jpg" />
     </div>
     <button id="chamh-btn">
       <i class="fas fa-sign-out-alt chamh-btn-icon"></i>
@@ -43,13 +62,13 @@
     </button>
   </div>
   <div class="div-right div-chung">
-    <div class="form" class="div-center">
+    <div class="form div-center">
       <label>Tên bộ phim:</label>
-      <input type="text">
+      <input type="text" ng-model="movie.tenPhim">
     </div>
     <div class="form" class="div-center">
       <label>Thể loại phim:</label>
-      <select>
+      <select ng-model="movie.theLoai">
         <option>Tiểu sử lịch sử</option>
         <option>Lãng mạn tình cảm</option>
         <option>Khoa học viễn tưởng</option>
@@ -104,22 +123,27 @@
     </div>
     <div class="form" class="div-center">
       <label>Nội dung mô tả:</label>
-      <textarea>Điền thông tin của phim, diễn viên chính, nội dung của phim...</textarea>
+      <textarea ng-model="movie.moTa" placeholder="Điền thông tin của phim, diễn viên chính, nội dung của phim..."></textarea>
     </div>
   </div>
   <div class="header3">
-    <button id="tao-phim-btn">
+    <button id="tao-phim-btn" ng-click="taoPhim()">
       <i class="fa fa-upload fa-lg tao-phim-btn-icon"></i>
       tạo phim
     </button>
-    <button id="dang-nhap-btn">
-      <i class="fas fa-sign-out-alt dang-nhap-btn-icon"></i>
-      ĐĂNG NHẬP
-    </button>
+    <a href="/khanh" class="khanh-link">
+      <button id="dang-nhap-btn">
+        <i class="fas fa-sign-out-alt dang-nhap-btn-icon"></i>
+        ĐĂNG NHẬP
+      </button>
+    </a>
   </div>
-  <div class="footer-div">
-      <p>Copyright © Cinema Website 2017-2018</p>   `
-  </div>
+
+  <footer>
+    <p>Copyright © Cinema Website 2017-2018</p>
+  </footer>
 </body>
 
 </html>
+
+<script src="/javascripts/taophimmoi.js"></script>

@@ -1,0 +1,146 @@
+html {
+    height: 100%;
+}
+  
+body {
+    font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+    margin:0;
+     padding:0;
+     height:100%;
+}
+.header1{
+    margin: 0;
+    width: 100%;
+    height: 200px;
+    background-image: url(https://s4isystems.com/wp-content/uploads/2014/11/header-background-2.jpg);
+    background-repeat: no-repeat;
+    
+}
+.logo{
+    transform: scale(0.4);
+    display: block;
+    margin: auto;
+    position: relative;
+    top: -111px;
+  
+}
+  
+.header2{
+    background:linear-gradient(#215769,#033e52);
+    height: 40px;
+    padding-right: 20px;
+    padding-left: 25px;
+    
+}
+  
+  
+.header2-1{
+    float: right;
+    position: relative;
+    top: 6px;
+}
+
+ 
+.h1{
+    float: right;
+    line-height: 30px;
+    margin-left: 10px;
+    margin-right: 10px; 
+    padding: 0 10px;
+    color: white;
+    font-size: 15px;
+    margin: 0;
+    text-decoration: none;
+}
+.header2-2{
+    float: left;
+    position: relative;
+    top: 6px;
+}
+  
+.h1:hover,
+.icon:hover{
+    background: #dadee8;
+    cursor: pointer;
+}
+.fas{
+    color: white;
+    
+}
+.icon-user{
+    zoom: 1.2;
+}
+.icon-sign-out{
+    zoom: 1.4;
+    position: relative;
+    top: 2px;
+}
+.icon-upload{
+    zoom: 0.9;
+}
+.icon-home{
+    zoom: 1.4;
+}
+.icon-back{
+    zoom: 1.4;
+    margin-left: 15px;
+  
+}
+.icon{
+    padding: 0 5px;
+    line-height: 22px !important
+}
+
+.content{
+    margin-top: 50px;
+}
+.content-chung{
+}
+
+.content-con{
+    display: inline-block;
+    width: 25%;
+    height: 500px;
+    margin: 21px;
+    border: 1px solid black;
+    overflow: hidden;
+    margin: 56px;
+
+
+}
+.content-con-1{
+    width:100%;
+    height: 100%;
+
+}
+.content-img{
+    float: left;
+    width: 100%;
+    height: 80%;
+}
+.img{
+    width: 100%;
+    height: 100%;
+}
+.content-p{
+    float: left;
+    margin: 0px;
+    background:linear-gradient(#215769,#033e52);
+    width: 100%;
+    height: 20%;
+    color: white;
+    /* line-height: 35px; */
+    /* padding-left: 10px; */
+}
+
+footer { 
+    margin-top: 30px;
+    float: left;
+    display: block;
+    width: 100%;
+    background:linear-gradient(#215769,#033e52);
+  }
+  p {
+    color: white;
+    text-align: center;
+  }
