@@ -1,14 +1,11 @@
 const express = require ('express')
 const router = express.Router()
-const movieController = require('../controllers/movieController')
+const userController = require('../controllers/userController')
 
 router.post('/', async function(req,res){
     try {
-        // if (!req.session.email) {
-        //     throw Error ({message:'Bạn chưa đăng nhập'})
-        // }
         //gọi hàm tạo phim trong movieController để trả về data cho biến response
-        let response = await movieController.createMovie(req.body)
+        let response = await userController.createUser(req.body, req)
         //trả data response về cho client
         res.send(response)
     } catch (error) {
@@ -18,7 +15,7 @@ router.post('/', async function(req,res){
 
 router.get('/', async function(req,res){
     try {
-        let response = await movieController.getListMovie(req.body)
+        let response = await userController.getListUser(req.body)
         res.send(response)
     } catch (error) {
         res.send(error)

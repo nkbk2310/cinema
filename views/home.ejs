@@ -5,7 +5,25 @@
   <link rel='stylesheet' href='/stylesheets/home.css' />
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
     integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
-  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.8/angular.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.theme.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+    crossorigin="anonymous"></script>
+
+  <style>
+    .modal-body {
+      padding: 0 4rem
+    }
+
+    .modal-footer {
+      justify-content: space-between;
+    }
+  </style>
 </head>
 
 <body ng-app="cinema" ng-controller="homeController">
@@ -15,11 +33,11 @@
     </div>
     <div class="header2">
       <div class="header2-1">
-        <a class="h1">
+        <a class="h1" data-toggle="modal" data-target="#signupModal">
           <i class=" fas fa-user-plus icon-user"></i>
           ĐĂNG KÝ
         </a>
-        <a class="h1">
+        <a class="h1" data-toggle="modal" data-target="#signupModal">
           <i class="fas fa-sign-out-alt icon-sign-out"></i>
           ĐĂNG NHẬP
         </a>
@@ -45,20 +63,111 @@
           <div class="content-p">
             <p>Tên phim: {{movie.tenPhim}}</p>
             <p>Thể loại: {{movie.theLoai}}</p>
+            <p>Ngày tạo: {{movie.thoiGianTao | date: 'dd/MM/yyyy HH:mm:ss'}}</p>
             <p>Mô tả: {{movie.moTa}}</p>
           </div>
         </div>
       </div>
-
     </div>
   </div>
+
+  <!-- Modal Đăng ký -->
+  <div class="modal fade" id="signupModal" tabindex="-1" role="dialog" aria-labelledby="signupleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="signupleModalLabel">đăng ký</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <form>
+            <div class="form-group">
+              <label for="recipient-name" class="col-form-label">Tên người dùng:</label>
+              <input type="text" class="form-control" id="recipient-name" ng-model="user.tenDangNhap">
+            </div>
+          </form>
+        </div>
+        <div class="modal-body">
+          <form>
+            <div class="form-group">
+              <label for="recipient-name" class="col-form-label">Địa chỉ email:</label>
+              <input type="email" class="form-control" id="recipient-name" ng-model="user.email">
+            </div>
+          </form>
+        </div>
+        <div class="modal-body">
+          <form>
+            <div class="form-group">
+              <label for="recipient-name" class="col-form-label">Mật khẩu:</label>
+              <input type="password" class="form-control" id="recipient-name" ng-model="user.matKhau">
+            </div>
+          </form>
+        </div>
+        <div class="modal-body">
+          <form>
+            <div class="form-group">
+              <label for="recipient-name" class="col-form-label">Xác nhận mật khẩu:</label>
+              <input type="password" class="form-control" id="recipient-name" ng-model="user.xacNhanMatKhau">
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary float-left" data-dismiss="modal">Huỷ</button>
+          <button type="button" ng-click="dangKy()" class="btn btn-primary">Tạo Tài Khoản</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal Đăng nhập -->
+  <div class="modal fade" id="signinModal" tabindex="-1" role="dialog" aria-labelledby="signinleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="signinleModalLabel">đăng nhập</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <form>
+            <div class="form-group">
+              <label for="recipient-name" class="col-form-label">Địa chỉ email:</label>
+              <input type="email" class="form-control" id="recipient-name" ng-model="user.email">
+            </div>
+          </form>
+        </div>
+        <div class="modal-body">
+          <form>
+            <div class="form-group">
+              <label for="recipient-name" class="col-form-label">Mật khẩu:</label>
+              <input type="password" class="form-control" id="recipient-name" ng-model="user.matKhau">
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary float-left" data-dismiss="modal">Huỷ</button>
+          <button type="button" ng-click="dangKy()" class="btn btn-primary">Đặng nhập</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
 
   <footer>
     <p>Copyright © Cinema Website 2017-2018</p>
   </footer>
 
-  </body>
+</body>
 
-  </html>
+</html>
 
-  <script src="/javascripts/home.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+  integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.8/angular.min.js"></script>
+
+<script src="/javascripts/home.js"></script>

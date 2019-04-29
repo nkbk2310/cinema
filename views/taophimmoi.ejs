@@ -3,10 +3,23 @@
 
 <head>
   <link rel='stylesheet' href='/stylesheets/taophimmoi.css' />
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
-    integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.8/angular.min.js"></script>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.theme.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 
+  <style>
+    .modal-body {
+      padding: 0 4rem
+    }
+
+    .modal-footer {
+      justify-content: space-between;
+    }
+  </style>
 </head>
 
 <body ng-app="cinema" ng-controller="taophimmoiController">
@@ -26,7 +39,8 @@
     </div>
     <div class="header2">
       <div class="header2-1">
-        <h1 class="h1">
+       <% if (!email) { %>  
+        <h1 class="h1" data-toggle="modal" data-target="#signupModal">
           <i class=" fas fa-user-plus icon-user"></i>
           ĐĂNG KÝ
         </h1>
@@ -36,6 +50,7 @@
             ĐĂNG NHẬP
           </h1>
         </a>
+      <% } %>
         <h1 class="h1">
           <i class="fas fa-upload fa-lg icon-upload"></i>
           TẠO PHIM MỚI
@@ -91,39 +106,13 @@
     <div class="form" class="div-center">
       <label>Thời gian phát hành:</label>
       <div class="input-chung1">
-        <select class="text text">
-          <option>Tháng</option>
-          <option>Tháng 1</option>
-          <option>Tháng 2</option>
-          <option>Tháng 3</option>
-          <option>Tháng 4</option>
-          <option>Tháng 5</option>
-          <option>Tháng 6</option>
-          <option>Tháng 7</option>
-          <option>Tháng 8</option>
-          <option>Tháng 9</option>
-          <option>Tháng 10</option>
-          <option>Tháng 11</option>
-          <option>Tháng 12</option>
-        </select>
-        <select class="text text2">
-          <option>Năm</option>
-          <option>Năm 2009</option>
-          <option>Năm 2010</option>
-          <option>Năm 2011</option>
-          <option>Năm 2012</option>
-          <option>Năm 2013</option>
-          <option>Năm 2014</option>
-          <option>Năm 2015</option>
-          <option>Năm 2016</option>
-          <option>Năm 2018</option>
-          <option>Năm 2019</option>
-        </select>
+        <input type="text" ng-model="movie.thoiGianTao" id="date">
       </div>
     </div>
     <div class="form" class="div-center">
       <label>Nội dung mô tả:</label>
-      <textarea ng-model="movie.moTa" placeholder="Điền thông tin của phim, diễn viên chính, nội dung của phim..."></textarea>
+      <textarea ng-model="movie.moTa"
+        placeholder="Điền thông tin của phim, diễn viên chính, nội dung của phim..."></textarea>
     </div>
   </div>
   <div class="header3">
@@ -142,8 +131,67 @@
   <footer>
     <p>Copyright © Cinema Website 2017-2018</p>
   </footer>
+  <!-- Modal -->
+  <div class="modal fade" id="signupModal" tabindex="-1" role="dialog" aria-labelledby="signupleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="signupleModalLabel">đăng ký</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <form>
+            <div class="form-group">
+              <label for="recipient-name" class="col-form-label">Tên người dùng:</label>
+              <input type="text" class="form-control" id="recipient-name" ng-model="user.tenDangNhap">
+            </div>
+          </form>
+        </div>
+        <div class="modal-body">
+          <form>
+            <div class="form-group">
+              <label for="recipient-name" class="col-form-label">Địa chỉ email:</label>
+              <input type="email" class="form-control" id="recipient-name" ng-model="user.email">
+            </div>
+          </form>
+        </div>
+        <div class="modal-body">
+          <form>
+            <div class="form-group">
+              <label for="recipient-name" class="col-form-label">Mật khẩu:</label>
+              <input type="password" class="form-control" id="recipient-name" ng-model="user.matKhau">
+            </div>
+          </form>
+        </div>
+        <div class="modal-body">
+          <form>
+            <div class="form-group">
+              <label for="recipient-name" class="col-form-label">Xác nhận mật khẩu:</label>
+              <input type="password" class="form-control" id="recipient-name" ng-model="user.xacNhanMatKhau">
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary float-left" data-dismiss="modal">Huỷ</button>
+          <button type="button" ng-click="dangKy()" class="btn btn-primary">Tạo Tài Khoản</button>
+        </div>
+      </div>
+    </div>
+  </div>
 </body>
 
 </html>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.8/angular.min.js"></script>
+
+<script>
+  $(function () {
+    $("#date").datepicker();
+  });
+</script>
 
 <script src="/javascripts/taophimmoi.js"></script>

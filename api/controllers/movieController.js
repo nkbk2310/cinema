@@ -7,9 +7,10 @@ const createMovie = async (data) => {
     //đưa dữ liệu từ dưới client lên server
     movie.tenPhim = data.tenPhim
     movie.theLoai = data.theLoai
-    movie.thoiGianPhatHanh = data.thoiGianPhatHanh
+    movie.thoiGianPhatHanh = data.thoiGianTao
     movie.moTa = data.moTa
     movie.hinhMinhHoa = data.hinhMinhHoa || ''
+    movie.thoiGianTao = data.thoiGianTao
 
     //lưu dữ liệu xuống database 
     movie = await movie.save()

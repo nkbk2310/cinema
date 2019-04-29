@@ -38,10 +38,11 @@ body {
     float: right;
     position: relative;
     top: 6px;
+    color: white;
 }
 
  
-.h1{
+.header2-1 .h1{
     float: right;
     line-height: 30px;
     margin-left: 10px;
@@ -95,16 +96,17 @@ body {
     margin-top: 50px;
 }
 .content-chung{
+    text-align: center;
 }
 
 .content-con{
     display: inline-block;
     width: 25%;
-    height: 500px;
+    height: 600px;
     margin: 21px;
     border: 1px solid black;
     overflow: hidden;
-    margin: 56px;
+    margin: 35px;
 
 
 }
@@ -116,7 +118,7 @@ body {
 .content-img{
     float: left;
     width: 100%;
-    height: 80%;
+    height: 75%;
 }
 .img{
     width: 100%;
@@ -127,7 +129,7 @@ body {
     margin: 0px;
     background:linear-gradient(#215769,#033e52);
     width: 100%;
-    height: 20%;
+    height: 25%;
     color: white;
     /* line-height: 35px; */
     /* padding-left: 10px; */

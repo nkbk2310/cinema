@@ -90,7 +90,7 @@ h1{
 
 }
 
-.h1{
+.header2-1 .h1{
   float: right;
   line-height: 30px;
   margin-left: 10px;
@@ -207,10 +207,20 @@ h1{
   height: 100px;
   margin-top: 5px;
   padding-left: 5px;
-  font-size: 13px;
+  font-size: 14px;
   font-style: italic;
   color: #636466
 }
+
+.form > div > input{
+  width: 57.5%;
+  height: 25px;
+  margin-top: 5px;
+  font-size: 14px;
+  padding-left: 5px;
+
+}
+
 .header3{
   float: left;
   width: 100%;

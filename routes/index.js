@@ -6,6 +6,7 @@ router.get('/home', function(req, res, next) {
   res.render('home', { title: 'Express' });
 });
 router.get('/taophimmoi', function(req, res, next) {
-  res.render('taophimmoi');
+  let email = req.session.email
+  res.render('taophimmoi', { email: email});
 });
 module.exports = router;
