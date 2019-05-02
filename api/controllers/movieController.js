@@ -7,7 +7,7 @@ const createMovie = async (data) => {
     //đưa dữ liệu từ dưới client lên server
     movie.tenPhim = data.tenPhim
     movie.theLoai = data.theLoai
-    movie.thoiGianPhatHanh = data.thoiGianTao
+    movie.thoiGianPhatHanh = data.thoiGianPhatHanh
     movie.moTa = data.moTa
     movie.hinhMinhHoa = data.hinhMinhHoa || ''
     movie.thoiGianTao = data.thoiGianTao
@@ -22,7 +22,7 @@ const createMovie = async (data) => {
 }
 
 const getListMovie = async () => {
-    let ListMovie = await Moive.find()
+    let ListMovie = await Moive.find().sort({thoiGianTao:-1})
     return {
         ListMovie: ListMovie
     }

@@ -3,13 +3,17 @@
 
 <head>
   <link rel='stylesheet' href='/stylesheets/taophimmoi.css' />
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+    integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css" />
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.theme.css" />
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+    crossorigin="anonymous"></script>
 
   <style>
     .modal-body {
@@ -23,49 +27,49 @@
 </head>
 
 <body ng-app="cinema" ng-controller="taophimmoiController">
-  <!-- <header>
-        <img src="/images/Logo-white.png" class="header-logo"> -->
-  <!-- <div class="header-link-h1">
-      <h1>phim mới</h1>
-      <h1>thể loại</h1>
-      <h1>phim lẻ</h1>
-      <h1>phim bộ</h1>
-      <h1>phim chiếu rạp</h1>
-    </div>
-  </header> -->
+
   <header>
     <div class="header1">
       <img src="/images/Logo-white.png" class="logo" />
     </div>
     <div class="header2">
       <div class="header2-1">
-       <% if (!email) { %>  
+        <% if (!email) { %>
         <h1 class="h1" data-toggle="modal" data-target="#signupModal">
           <i class=" fas fa-user-plus icon-user"></i>
           ĐĂNG KÝ
         </h1>
-        <a href="/dangnhap" class="h1">
-          <h1 class="h1">
-            <i class="fas fa-sign-out-alt icon-sign-out"></i>
-            ĐĂNG NHẬP
-          </h1>
-        </a>
-      <% } %>
-        <h1 class="h1">
-          <i class="fas fa-upload fa-lg icon-upload"></i>
-          TẠO PHIM MỚI
+        <h1 class="h1" data-toggle="modal" data-target="#signinModal">
+          <i class="fas fa-sign-out-alt icon-sign-out"></i>
+          ĐĂNG NHẬP
         </h1>
+        <% } else {%>
+          <h1 href="" class="h1" ng-click="dangXuat()">
+              <i class="fas fa-sign-out-alt icon-username"></i>
+              ĐĂNG XUẤT
+          </h1>
+          <h1 class="h1">
+              <i class="fas fa-upload fa-lg icon-upload"></i>
+              TẠO PHIM MỚI
+            </h1>
+          <h1 href="" class="h1">
+              <i class="fas fa-user icon-username"></i>
+              {{username}}
+          </h1>
+        <%}%>
+ 
       </div>
       <div class="header2-2">
-        <a href="/home">
+        <a href="/">
           <i class="fas fa-home icon-home icon"></i>
         </a>
-        <i class="fas fa-arrow-circle-left icon-back icon"></i>
+        <!-- <i class="fas fa-arrow-circle-left icon-back icon"></i> -->
       </div>
     </div>
   </header>
 
   <p class="title4">TẠO PHIM MỚI</p>
+  <div>
   <div class="div-left div-chung">
     <div class="img-chamh-div">
       <img class="img-chamh"
@@ -106,7 +110,7 @@
     <div class="form" class="div-center">
       <label>Thời gian phát hành:</label>
       <div class="input-chung1">
-        <input type="text" ng-model="movie.thoiGianTao" id="date">
+        <input type="text" ng-model="movie.thoiGianPhatHanh" id="date">
       </div>
     </div>
     <div class="form" class="div-center">
@@ -120,17 +124,14 @@
       <i class="fa fa-upload fa-lg tao-phim-btn-icon"></i>
       tạo phim
     </button>
-    <a href="/khanh" class="khanh-link">
-      <button id="dang-nhap-btn">
-        <i class="fas fa-sign-out-alt dang-nhap-btn-icon"></i>
-        ĐĂNG NHẬP
-      </button>
-    </a>
   </div>
+</div>
+
 
   <footer>
-    <p>Copyright © Cinema Website 2017-2018</p>
+    <p1>Copyright © Cinema Website 2017-2018</p1>
   </footer>
+
   <!-- Modal -->
   <div class="modal fade" id="signupModal" tabindex="-1" role="dialog" aria-labelledby="signupleModalLabel"
     aria-hidden="true">
@@ -145,32 +146,32 @@
         <div class="modal-body">
           <form>
             <div class="form-group">
-              <label for="recipient-name" class="col-form-label">Tên người dùng:</label>
-              <input type="text" class="form-control" id="recipient-name" ng-model="user.tenDangNhap">
+              <label for="tennguoidung-for" class="col-form-label">Tên người dùng:</label>
+              <input type="text" class="form-control" id="tennguoidung-id" ng-model="user.tenDangNhap">
             </div>
           </form>
         </div>
         <div class="modal-body">
           <form>
             <div class="form-group">
-              <label for="recipient-name" class="col-form-label">Địa chỉ email:</label>
-              <input type="email" class="form-control" id="recipient-name" ng-model="user.email">
+              <label for="email-for" class="col-form-label">Địa chỉ email:</label>
+              <input type="email" class="form-control" id="email-id" ng-model="user.email">
             </div>
           </form>
         </div>
         <div class="modal-body">
           <form>
             <div class="form-group">
-              <label for="recipient-name" class="col-form-label">Mật khẩu:</label>
-              <input type="password" class="form-control" id="recipient-name" ng-model="user.matKhau">
+              <label for="matkhau-for" class="col-form-label">Mật khẩu:</label>
+              <input type="password" class="form-control" id="matkhau-id" ng-model="user.matKhau">
             </div>
           </form>
         </div>
         <div class="modal-body">
           <form>
             <div class="form-group">
-              <label for="recipient-name" class="col-form-label">Xác nhận mật khẩu:</label>
-              <input type="password" class="form-control" id="recipient-name" ng-model="user.xacNhanMatKhau">
+              <label for="xacnhanmatkhau-for" class="col-form-label">Xác nhận mật khẩu:</label>
+              <input type="password" class="form-control" id="xacnhanmatkhau-id" ng-model="user.xacNhanMatKhau">
             </div>
           </form>
         </div>
@@ -181,11 +182,48 @@
       </div>
     </div>
   </div>
+
+  <!-- Modal Đăng nhập -->
+  <div class="modal fade" id="signinModal" tabindex="-1" role="dialog" aria-labelledby="signinleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="signinleModalLabel">đăng nhập</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <form>
+            <div class="form-group">
+              <label for="emaildangnhap-for" class="col-form-label">Địa chỉ email:</label>
+              <input type="email" class="form-control" id="emaildangnhap-id" ng-model="user.email">
+            </div>
+          </form>
+        </div>
+        <div class="modal-body">
+          <form>
+            <div class="form-group">
+              <label for="matkhaudangnhap-for" class="col-form-label">Mật khẩu:</label>
+              <input type="password" class="form-control" id="matkhaudangnhap-id" ng-model="user.matKhau">
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary float-left" data-dismiss="modal">Huỷ</button>
+          <button type="button" class="btn btn-primary" ng-click="dangNhap()">Đăng nhập</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
 </body>
 
 </html>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+  integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.8/angular.min.js"></script>
 
 <script>
@@ -195,3 +233,4 @@
 </script>
 
 <script src="/javascripts/taophimmoi.js"></script>
+<script src="/javascripts/cookie.js"></script>

@@ -33,22 +33,35 @@
     </div>
     <div class="header2">
       <div class="header2-1">
+        <% if (!email) { %>
         <a class="h1" data-toggle="modal" data-target="#signupModal">
           <i class=" fas fa-user-plus icon-user"></i>
           ĐĂNG KÝ
         </a>
-        <a class="h1" data-toggle="modal" data-target="#signupModal">
+        <a class="h1" data-toggle="modal" data-target="#signinModal">
           <i class="fas fa-sign-out-alt icon-sign-out"></i>
           ĐĂNG NHẬP
+        </a>
+        <% } else {%>
+        <a href="" class="h1" ng-click="dangXuat()">
+          <i class="fas fa-sign-out-alt icon-username"></i>
+          ĐĂNG XUẤT
         </a>
         <a href="/taophimmoi" class="h1">
           <i class="fas fa-upload fa-lg icon-upload"></i>
           TẠO PHIM MỚI
         </a>
+        <a href="" class="h1">
+          <i class="fas fa-user icon-username"></i>
+          {{username}}
+        </a>
+        <%}%>
       </div>
       <div class="header2-2">
+          <a href="/">
         <i class="fas fa-home icon-home icon"></i>
-        <i class="fas fa-arrow-circle-left icon-back icon"></i>
+          </a>
+        <!-- <i class="fas fa-arrow-circle-left icon-back icon"></i> -->
       </div>
     </div>
   </header>
@@ -63,7 +76,7 @@
           <div class="content-p">
             <p>Tên phim: {{movie.tenPhim}}</p>
             <p>Thể loại: {{movie.theLoai}}</p>
-            <p>Ngày tạo: {{movie.thoiGianTao | date: 'dd/MM/yyyy HH:mm:ss'}}</p>
+            <p>Ngày phát hành: {{movie.thoiGianPhatHanh | date: 'dd/MM/yyyy'}}</p>
             <p>Mô tả: {{movie.moTa}}</p>
           </div>
         </div>
@@ -85,32 +98,32 @@
         <div class="modal-body">
           <form>
             <div class="form-group">
-              <label for="recipient-name" class="col-form-label">Tên người dùng:</label>
-              <input type="text" class="form-control" id="recipient-name" ng-model="user.tenDangNhap">
+              <label for="tennguoidung-for" class="col-form-label">Tên người dùng:</label>
+              <input type="text" class="form-control" id="tennguoidung-id" ng-model="user.tenDangNhap">
             </div>
           </form>
         </div>
         <div class="modal-body">
           <form>
             <div class="form-group">
-              <label for="recipient-name" class="col-form-label">Địa chỉ email:</label>
-              <input type="email" class="form-control" id="recipient-name" ng-model="user.email">
+              <label for="email-for" class="col-form-label">Địa chỉ email:</label>
+              <input type="email" class="form-control" id="email-id" ng-model="user.email">
             </div>
           </form>
         </div>
         <div class="modal-body">
           <form>
             <div class="form-group">
-              <label for="recipient-name" class="col-form-label">Mật khẩu:</label>
-              <input type="password" class="form-control" id="recipient-name" ng-model="user.matKhau">
+              <label for="matkhau-for" class="col-form-label">Mật khẩu:</label>
+              <input type="password" class="form-control" id="matkhau-id" ng-model="user.matKhau">
             </div>
           </form>
         </div>
         <div class="modal-body">
           <form>
             <div class="form-group">
-              <label for="recipient-name" class="col-form-label">Xác nhận mật khẩu:</label>
-              <input type="password" class="form-control" id="recipient-name" ng-model="user.xacNhanMatKhau">
+              <label for="xacnhanmatkhau-for" class="col-form-label">Xác nhận mật khẩu:</label>
+              <input type="password" class="form-control" id="xacnhanmatkhau-id" ng-model="user.xacNhanMatKhau">
             </div>
           </form>
         </div>
@@ -136,22 +149,22 @@
         <div class="modal-body">
           <form>
             <div class="form-group">
-              <label for="recipient-name" class="col-form-label">Địa chỉ email:</label>
-              <input type="email" class="form-control" id="recipient-name" ng-model="user.email">
+              <label for="emaildangnhap-for" class="col-form-label">Địa chỉ email:</label>
+              <input type="email" class="form-control" id="emaildangnhap-id" ng-model="user.email">
             </div>
           </form>
         </div>
         <div class="modal-body">
           <form>
             <div class="form-group">
-              <label for="recipient-name" class="col-form-label">Mật khẩu:</label>
-              <input type="password" class="form-control" id="recipient-name" ng-model="user.matKhau">
+              <label for="matkhaudangnhap-for" class="col-form-label">Mật khẩu:</label>
+              <input type="password" class="form-control" id="matkhaudangnhap-id" ng-model="user.matKhau">
             </div>
           </form>
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary float-left" data-dismiss="modal">Huỷ</button>
-          <button type="button" ng-click="dangKy()" class="btn btn-primary">Đặng nhập</button>
+          <button type="button" ng-click="dangNhap()" class="btn btn-primary">Đăng nhập</button>
         </div>
       </div>
     </div>
@@ -159,7 +172,7 @@
 
 
   <footer>
-    <p>Copyright © Cinema Website 2017-2018</p>
+    <p1>Copyright © Cinema Website 2017-2018</p1>
   </footer>
 
 </body>
@@ -171,3 +184,4 @@
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.8/angular.min.js"></script>
 
 <script src="/javascripts/home.js"></script>
+<script src="/javascripts/cookie.js"></script>

@@ -12,6 +12,7 @@ router.post('/', async function(req,res){
         //trả data response về cho client
         res.send(response)
     } catch (error) {
+        console.log(error)
         res.send(error)
     }
 })
