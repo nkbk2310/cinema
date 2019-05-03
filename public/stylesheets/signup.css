@@ -106,53 +106,132 @@ body {
     zoom: 1.4;  
 }
 
-/* .icon{
-    padding: 0 5px;
-    line-height: 22px !important
-} */
+
+.content-cha{
+    float: left;
+    width: 100%;
+    display: flex;
+    margin: 100px 0;
+}
 
 .content{
-    margin-top: 50px;
+    float: left;
+    background-color: white;
+    box-shadow: 0px 0px 7px #8c8c8c;
+    width: 600px;
+    height: 650px;
+    margin: 0 auto;
 }
-.content-chung{
+
+.content-top{
+    float: left;
+    height: 20%;
+    width: 100%;
+    /* margin-top: 30px; */
+}
+
+.content-bottom{
+    float: left;
+    height: 77%;
+    width: 100%;
+    margin-top: 20px;
+}
+
+.b1{
+    float: left;
+    width: 100%;
     text-align: center;
-}
-
-.content-con{
-    display: inline-block;
-    width: 25%;
-    height: 600px;
-    margin: 21px;
-    border: 1px solid black;
-    overflow: hidden;
-    margin: 35px;
-
+    text-transform: uppercase;
+    font-size: 24px;
+    font-weight: lighter;
+    color: #6d6d6d;
 
 }
-.content-con-1{
-    width:100%;
-    height: 100%;
-
-}
-.content-img{
+.c1{
     float: left;
     width: 100%;
-    height: 75%;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 36px;
+    font-weight: lighter;
+    color: #6B90BF;
+    margin-top: 35px;
+
 }
-.img{
-    width: 100%;
-    height: 100%;
-}
-.content-p{
+.c2{
     float: left;
-    margin: 0px;
-    background:linear-gradient(#215769,#033e52);
     width: 100%;
-    height: 25%;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 16px;
+    font-weight: lighter;
+    color: #545454;
+}
+
+.img-logo{
+    width: 55%;
+}
+.c3{
+    font-weight: lighter;
+    color: #545454;
+    font-size: 15px;
+
+}
+
+.input-signin{
+    border: #6B90BF 1px solid;
+    height: 36px;
+    width: 385px;
+    /* margin: 20px 0; */
+    font-size: 17px;
+    padding-left: 10px;
+    font-weight: lighter;
+    color: black;
+}
+
+.content-bottom-con1{
+    /* text-align: center; */
+}
+
+.c3, .input-signin{
+    /* margin: 15px 0; */
+    margin: 15px 101px;
+}
+
+.b2{
+    float: left;
+    width: 100%;
+    height: 100px;
+    margin-top: 30px;
+
+} 
+
+.b2-1{
+    float: left;
+    margin-left: 90px;
+    
+}
+.b2-2{
+    float: right;
+    margin-right: 90px;
+    
+}
+
+#bnt-dangnhap,
+#bnt-huy{
+    background-image: url(/images/button\ 2.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 130px;
+    height: 55px;
+    border-style: none;
+    font-size: 16px;
     color: white;
-    /* line-height: 35px; */
-    /* padding-left: 10px; */
+    text-transform: uppercase;
 }
+
+
+
 
 footer { 
     margin-top: 30px;
@@ -169,3 +248,4 @@ p1 {
     text-align: center;
     line-height: 50px;
 }
+

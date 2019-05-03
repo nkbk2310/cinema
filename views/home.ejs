@@ -4,10 +4,10 @@
 <head>
   <link rel='stylesheet' href='/stylesheets/home.css' />
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
-    integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css" />
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.theme.css" />
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
@@ -35,32 +35,36 @@
       <div class="header2-1">
         <% if (!email) { %>
         <a class="h1" data-toggle="modal" data-target="#signupModal">
-          <i class=" fas fa-user-plus icon-user"></i>
+          <i class=" fas fa-user-plus icon-menu icon-user"></i>
           ĐĂNG KÝ
         </a>
         <a class="h1" data-toggle="modal" data-target="#signinModal">
-          <i class="fas fa-sign-out-alt icon-sign-out"></i>
+          <i class="fas fa-sign-out-alt icon-menu icon-sign-out"></i>
           ĐĂNG NHẬP
         </a>
         <% } else {%>
         <a href="" class="h1" ng-click="dangXuat()">
-          <i class="fas fa-sign-out-alt icon-username"></i>
+          <i class="fas fa-sign-out-alt icon-menu icon-username"></i>
           ĐĂNG XUẤT
         </a>
         <a href="/taophimmoi" class="h1">
-          <i class="fas fa-upload fa-lg icon-upload"></i>
+          <i class="fas fa-upload fa-lg icon-menu icon-upload"></i>
           TẠO PHIM MỚI
         </a>
         <a href="" class="h1">
-          <i class="fas fa-user icon-username"></i>
+          <i class="fas fa-user icon-menu icon-username"></i>
           {{username}}
         </a>
         <%}%>
       </div>
       <div class="header2-2">
-          <a href="/">
-        <i class="fas fa-home icon-home icon"></i>
+          <a class="h1" href="/" >
+              <i class=" fas fa-home icon-menu icon-home"></i>
+              TRANG CHỦ
           </a>
+          <!-- <a href="/">
+        <i class="fas fa-home icon-home icon"></i>
+          </a> -->
         <!-- <i class="fas fa-arrow-circle-left icon-back icon"></i> -->
       </div>
     </div>

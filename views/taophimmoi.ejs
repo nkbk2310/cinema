@@ -44,18 +44,18 @@
           ĐĂNG NHẬP
         </h1>
         <% } else {%>
-          <h1 href="" class="h1" ng-click="dangXuat()">
-              <i class="fas fa-sign-out-alt icon-username"></i>
-              ĐĂNG XUẤT
-          </h1>
-          <h1 class="h1">
-              <i class="fas fa-upload fa-lg icon-upload"></i>
-              TẠO PHIM MỚI
-            </h1>
-          <h1 href="" class="h1">
-              <i class="fas fa-user icon-username"></i>
-              {{username}}
-          </h1>
+        <h1 href="" class="h1" ng-click="dangXuat()">
+          <i class="fas fa-sign-out-alt icon-username"></i>
+          ĐĂNG XUẤT
+        </h1>
+        <h1 class="h1">
+          <i class="fas fa-upload fa-lg icon-upload"></i>
+          TẠO PHIM MỚI
+        </h1>
+        <h1 href="" class="h1">
+          <i class="fas fa-user icon-username"></i>
+          {{username}}
+        </h1>
         <%}%>
  
       </div>
@@ -88,6 +88,7 @@
     <div class="form" class="div-center">
       <label>Thể loại phim:</label>
       <select ng-model="movie.theLoai">
+          <option style="display:none" value="">Chọn thể loại</option>
         <option>Tiểu sử lịch sử</option>
         <option>Lãng mạn tình cảm</option>
         <option>Khoa học viễn tưởng</option>
@@ -107,7 +108,7 @@
         <option>Võ thuật</option>
       </select>
     </div>
-    <div class="form" class="div-center">
+    <div class="form" class="div-center" placeholder="Email">
       <label>Thời gian phát hành:</label>
       <div class="input-chung1">
         <input type="text" ng-model="movie.thoiGianPhatHanh" id="date">
@@ -230,6 +231,10 @@
   $(function () {
     $("#date").datepicker();
   });
+  $(document).ready(function () {
+    $('#date').datepicker('setDate', 'today');
+  });
+
 </script>
 
 <script src="/javascripts/taophimmoi.js"></script>

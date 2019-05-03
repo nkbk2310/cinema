@@ -10,7 +10,6 @@ const createMovie = async (data) => {
     movie.thoiGianPhatHanh = data.thoiGianPhatHanh
     movie.moTa = data.moTa
     movie.hinhMinhHoa = data.hinhMinhHoa || ''
-    movie.thoiGianTao = data.thoiGianTao
 
     //lưu dữ liệu xuống database 
     movie = await movie.save()
@@ -22,7 +21,7 @@ const createMovie = async (data) => {
 }
 
 const getListMovie = async () => {
-    let ListMovie = await Moive.find().sort({thoiGianTao:-1})
+    let ListMovie = await Moive.find().sort({thoiGianTao: -1})
     return {
         ListMovie: ListMovie
     }

@@ -10,5 +10,11 @@ router.get('/taophimmoi', function(req, res, next) {
   let email = req.session.email
   res.render('taophimmoi', { email: email});
 });
-
+router.get('/signin', function(req, res, next) {
+  let email = req.session.email
+  res.render('signin', { email: email});
+});router.get('/signup', function(req, res, next) {
+  let email = req.session.email
+  res.render('signup', { email: email});
+});
 module.exports = router;
