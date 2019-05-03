@@ -11,70 +11,64 @@
 
 <body ng-app="cinema" ng-controller="homeController">
   <header>
-    <div class="header1">
-      <!-- <img src="/images/Logo-white.png" class="logo" /> -->
-    </div>
-    <div class="header2">
-      <div class="header2-1">
-        <% if (!email) { %>
-        <a class="h1" data-toggle="modal" data-target="#signupModal">
-          <i class=" fas fa-user-plus icon-menu icon-user"></i>
-          ĐĂNG KÝ
-        </a>
-        <a class="h1" data-toggle="modal" data-target="#signinModal">
-          <i class="fas fa-sign-out-alt icon-menu icon-sign-out"></i>
-          ĐĂNG NHẬP
-        </a>
-        <% } else {%>
-        <a href="" class="h1" ng-click="dangXuat()">
+    <div class="header-cha">
+      <div class="header-con">
+        <h class="h1">
+          <img src="/images/Artboard 58.png" class="logo" />
+        </h>
+        <h class="h2">
+          <a class="a1 trangchu" href="/">
+            TRANG CHỦ
+          </a>
+          <a class="a1 dangnhap" data-toggle="modal" data-target="#signinModal" href="/signup">
+            ĐĂNG NHẬP
+          </a>
+          <a class="a1 dangky" data-toggle="modal" data-target="#signupModal">
+            ĐĂNG KÝ
+          </a>
+          <!-- <a href="" class="h1" ng-click="dangXuat()">
           <i class="fas fa-sign-out-alt icon-menu icon-username"></i>
           ĐĂNG XUẤT
+          <a href="" class="h1">
+            <i class="fas fa-user icon-menu icon-username"></i>
+            {{username}}
+          </a>
         </a>
         <a href="/taophimmoi" class="h1">
-          <i class="fas fa-upload fa-lg icon-menu icon-upload"></i>
           TẠO PHIM MỚI
-        </a>
-        <a href="" class="h1">
-          <i class="fas fa-user icon-menu icon-username"></i>
-          {{username}}
-        </a>
-        <%}%>
-      </div>
-      <div class="header2-2">
-          <a class="h1" href="/" >
-              <i class=" fas fa-home icon-menu icon-home"></i>
-              TRANG CHỦ
-          </a>
+        </a> -->
+        </h>
       </div>
     </div>
   </header>
 
-<div class="content-cha">
-  <div class="content">
-    <div class="content-top">
-      <b class="b1">welcome to</b>
-      <b class="b1">
-        <img src="/images/Logo Icon In App 2 copy 4.png" class="img-logo" />
-      </b>
-    </div>
-    <div class="content-bottom">
-      <div class="content-bottom-con1">
-      <input class="input-signin" type=”text” name=”hoten” placeholder="Email">
-        <input class="input-signin" type=”text” name=”hoten” placeholder="Mật Khẩu">
+  <div class="content-cha">
+    <div class="content">
+      <div class="content-top">
+        <b class="b1">welcome to</b>
+        <b class="b1">
+          <img src="/images/Logo Icon In App 2 copy 4.png" class="img-logo" />
+        </b>
       </div>
-      
-      <b class="b2">
-          <button id="bnt-dangnhap">
-              <i class="fas fa-sign-out-alt icon-menu icon-dangnhap"></i>
-              ĐĂNG NHẬP
-            </button>
-      </b>
+      <div class="content-bottom">
+        <div class="content-bottom-con1">
+          <input class="input-signin" type=”text” name=”hoten” placeholder="Email" ng-model="user.email">
+          <input class="input-signin" type=”text” name=”hoten” placeholder="Mật Khẩu" ng-model="user.matKhau">
+        </div>
+
+        <b class="b2">
+          <button id="bnt-dangnhap" ng-click="dangNhap()">
+            <i class="fas fa-sign-out-alt icon-menu icon-dangnhap"></i>
+            ĐĂNG NHẬP
+          </button>
+        </b>
+      </div>
     </div>
   </div>
-</div>
   <footer>
-      <p1>Copyright © Cinema Website 2017-2018</p1>
-    </footer>
-    
-  </body>
-  </html>
+    <p1>Copyright © Cinema Website 2017-2018</p1>
+  </footer>
+
+</body>
+
+</html>

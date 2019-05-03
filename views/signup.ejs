@@ -11,98 +11,92 @@
 
 <body ng-app="cinema" ng-controller="homeController">
   <header>
-    <div class="header1">
-      <img src="/images/Logo-white.png" class="logo" />
-    </div>
-    <div class="header2">
-      <div class="header2-1">
-        <% if (!email) { %>
-        <a class="h1" data-toggle="modal" data-target="#signupModal">
-          <i class=" fas fa-user-plus icon-menu icon-user"></i>
-          ĐĂNG KÝ
-        </a>
-        <a class="h1" data-toggle="modal" data-target="#signinModal">
-          <i class="fas fa-sign-out-alt icon-menu icon-sign-out"></i>
-          ĐĂNG NHẬP
-        </a>
-        <% } else {%>
-        <a href="" class="h1" ng-click="dangXuat()">
-          <i class="fas fa-sign-out-alt icon-menu icon-username"></i>
-          ĐĂNG XUẤT
-        </a>
-        <a href="/taophimmoi" class="h1">
-          <i class="fas fa-upload fa-lg icon-menu icon-upload"></i>
-          TẠO PHIM MỚI
-        </a>
-        <a href="" class="h1">
-          <i class="fas fa-user icon-menu icon-username"></i>
-          {{username}}
-        </a>
-        <%}%>
-      </div>
-      <div class="header2-2">
-          <a class="h1" href="/" >
-              <i class=" fas fa-home icon-menu icon-home"></i>
-              TRANG CHỦ
+    <div class="header-cha">
+      <div class="header-con">
+        <h class="h1">
+          <img src="/images/Artboard 58.png" class="logo" />
+        </h>
+        <h class="h2">
+          <a class="a1 trangchu" href="/">
+            TRANG CHỦ
           </a>
+          <a class="a1 dangnhap" data-toggle="modal" data-target="#signinModal">
+            ĐĂNG NHẬP
+          </a>
+          <a class="a1 dangky" data-toggle="modal" data-target="#signupModal">
+            ĐĂNG KÝ
+          </a>
+          <!-- <a href="" class="h1" ng-click="dangXuat()">
+                <i class="fas fa-sign-out-alt icon-menu icon-username"></i>
+                ĐĂNG XUẤT
+                <a href="" class="h1">
+                  <i class="fas fa-user icon-menu icon-username"></i>
+                  {{username}}
+                </a>
+              </a>
+              <a href="/taophimmoi" class="h1">
+                TẠO PHIM MỚI
+              </a> -->
+        </h>
       </div>
     </div>
   </header>
 
   <div class="content-cha">
-      <div class="content">
-          <div class="content-top">
-              <b class="c1">welcome to cinema</b>
-              <b class="c2">hãy điền đầy đủ thông tin!</b>
-            </div>
+    <div class="content">
+      <div class="content-top">
+        <b class="c1">welcome to cinema</b>
+        <b class="c2">hãy điền đầy đủ thông tin!</b>
+      </div>
 
-        <div class="content-bottom">
-          <div class="content-bottom-con1">
-            <b class="c3">
-              Tên người dùng:
-            </b>
-            <br />
+      <div class="content-bottom">
+        <div class="content-bottom-con1">
+          <b class="c3">
+            Tên người dùng:
+          </b>
+          <br />
           <input class="input-signin" type=”text” name=”hoten”>
           <br />
           <b class="c3">
-              Email:
-            </b>
+            Email:
+          </b>
           <br />
-            <input class="input-signin" type=”text” name=”hoten”>
-            <br />
-            <b class="c3">
-                Mật khẩu:
-              </b>
-            <br />
-              <input class="input-signin" type=”text” name=”hoten”>
-              <br />
-              <b class="c3">
-                Xác nhận lại mật khẩu:
-                </b>
-              <br />
-                <input class="input-signin" type=”text” name=”hoten”>
-          </div>
-          
-          <div class="b2">
+          <input class="input-signin" type=”text” name=”hoten”>
+          <br />
+          <b class="c3">
+            Mật khẩu:
+          </b>
+          <br />
+          <input class="input-signin" type=”text” name=”hoten”>
+          <br />
+          <b class="c3">
+            Xác nhận lại mật khẩu:
+          </b>
+          <br />
+          <input class="input-signin" type=”text” name=”hoten”>
+        </div>
+
+        <div class="b2">
           <div class="b2-1">
-              <button id="bnt-dangnhap">
-                  huỷ
-                </button>
-              </div>
-              <div class="b2-2">
-                  <button id="bnt-huy">
-                      đăng ký
-                    </button>
-                  </div>
-                </div>     
+            <button id="bnt-dangnhap">
+              huỷ
+            </button>
+          </div>
+          <div class="b2-2">
+            <button id="bnt-huy">
+              đăng ký
+            </button>
+          </div>
         </div>
       </div>
     </div>
-    
+  </div>
+
 
   <footer>
-      <p1>Copyright © Cinema Website 2017-2018</p1>
-    </footer>
-    
-  </body>
-  </html>
+    <p1>Copyright © Cinema Website 2017-2018</p1>
+  </footer>
+
+</body>
+
+</html>

@@ -8,75 +8,67 @@ body {
      padding:0;
      height:100%;
 }
-.header1{
+header{
+    margin: 0 auto;
+    width: 100%;
+    height: 560px;
+}
+.header-cha{
     margin: 0;
     width: 100%;
-    height: 200px;
-    background-image: url(https://s4isystems.com/wp-content/uploads/2014/11/header-background-2.jpg);
+    height: 100%;
+    background-image: url(https://vignette.wikia.nocookie.net/test123321/images/0/0e/Community-header-background/revision/latest?cb=20181121173213);
+    background-size: cover;
     background-repeat: no-repeat;
     
 }
-.logo{
-    transform: scale(0.4);
-    display: block;
-    margin: auto;
-    position: relative;
-    top: -111px;
-  
-}
-  
-.header2{
-    background:linear-gradient(#215769,#033e52);
-    height: 40px;
-    padding-right: 20px;
-    padding-left: 20px;
-    
-}
-  
-  
-.header2-1{
-    float: right;
-    /* position: relative; */
-    top: 6px;
-    color: white;
-}
-
- 
-.header2-1 .h1{
-    float: right;
-    line-height: 40px;
-    margin-left: 10px;
-    margin-right: 10px; 
-    padding: 0 10px;
-    color: white;
-    font-size: 15px;
-    margin: 0;
-    text-decoration: none;
-}
-.header2-2{
+.header-con{
     float: left;
-    /* position: relative; */
-    top: 6px;
-    color:white;
+    width: 100%;
+    height: 50%;
+    margin-top: 25px;
 }
-.header2-2 > .h1{
-    float: right;
-    line-height: 40px;
-    margin-left: 10px;
-    margin-right: 10px; 
-    padding: 0 10px;
-    color: white;
-    font-size: 15px;
-    margin: 0;
-    text-decoration: none;
+.h1{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 70%;
+    margin-bottom: 15px;
+}
+.logo{
+    transform: scale(0.8);
+}
+.h2{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 13%;
 
 }
+.a1{
+    line-height: 38px;
+    margin-left: 10px;
+    margin-right: 10px; 
+    padding: 0 25px;
+    color: white;
+    font-size: 15px;
+    text-decoration: none;
+}
+
+.dangky{
+    background-color: #215769;
+    border-radius: 50px;
+    color: white;
+    font-weight: bold;
+}
+
   
-.h1:hover{
-    background: rgba(255, 255, 255, 0.6);
+.a1:hover{
+    background: #215769;
     cursor: pointer;
-    height: 35px;
-    margin-top: 5px;
+    color: white;
+    border-radius: 50px;
+    font-weight: bold;
 }
 
 .icon-menu{
