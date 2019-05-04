@@ -6,8 +6,8 @@
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
     integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css" />
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"> -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.theme.css" />
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
@@ -15,7 +15,7 @@
     integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
     crossorigin="anonymous"></script>
 
-  <style>
+  <!-- <style>
     .modal-body {
       padding: 0 4rem
     }
@@ -23,202 +23,115 @@
     .modal-footer {
       justify-content: space-between;
     }
-  </style>
+  </style> -->
 </head>
 
 <body ng-app="cinema" ng-controller="taophimmoiController">
 
   <header>
-    <div class="header1">
-      <img src="/images/Logo-white.png" class="logo" />
-    </div>
-    <div class="header2">
-      <div class="header2-1">
-        <% if (!email) { %>
-        <h1 class="h1" data-toggle="modal" data-target="#signupModal">
-          <i class=" fas fa-user-plus icon-user"></i>
-          ĐĂNG KÝ
-        </h1>
-        <h1 class="h1" data-toggle="modal" data-target="#signinModal">
-          <i class="fas fa-sign-out-alt icon-sign-out"></i>
-          ĐĂNG NHẬP
-        </h1>
-        <% } else {%>
-        <h1 href="" class="h1" ng-click="dangXuat()">
-          <i class="fas fa-sign-out-alt icon-username"></i>
-          ĐĂNG XUẤT
-        </h1>
-        <h1 class="h1">
-          <i class="fas fa-upload fa-lg icon-upload"></i>
-          TẠO PHIM MỚI
-        </h1>
-        <h1 href="" class="h1">
-          <i class="fas fa-user icon-username"></i>
-          {{username}}
-        </h1>
+    <div class="header-cha">
+      <div class="header-con">
+        <h class="h1">
+          <img src="/images/logo cinema hot.png" class="logo" />
+        </h>
+        <h class="h2">
+          <a class="a1 trangchu" href="/">
+            TRANG CHỦ
+          </a>
+          <% if (!email) { %>
+          <a class="a1 dangnhap" href="/signin">
+            ĐĂNG NHẬP
+          </a>
+          <a class="a1 dangky" href="/signup">
+            ĐĂNG KÝ
+          </a>
+          <% } else {%>
+          <a href="/taophimmoi" class="a1 taophimmoi">
+            TẠO PHIM MỚI
+          </a>
+          <a href="" class="a1" ng-click="dangXuat()">
+            ĐĂNG XUẤT
+          </a>
+        </h>
+        <h class="h3">
+          <a class="a2">
+            <i class="fas fa-user icon-menu icon-username"></i>
+            {{username}}
+          </a>
+        </h>
         <%}%>
- 
-      </div>
-      <div class="header2-2">
-        <a href="/">
-          <i class="fas fa-home icon-home icon"></i>
-        </a>
-        <!-- <i class="fas fa-arrow-circle-left icon-back icon"></i> -->
       </div>
     </div>
   </header>
-
+  <input type="file" id="hinhDuocChon" ng-hide="true" accept="image/*">
   <p class="title4">TẠO PHIM MỚI</p>
   <div>
-  <div class="div-left div-chung">
-    <div class="img-chamh-div">
-      <img class="img-chamh"
-        src="https://cdn.fstoppers.com/styles/large-16-9/s3/lead/2014/10/dani-diamond-posing-how-to-model-photogaphy-best-top-fstoppersb.jpg" />
+    <div class="div-left div-chung">
+      <div class="img-chamh-div">
+        <img class="img-chamh" id="hinhHienThi"
+          src="https://cdn.fstoppers.com/styles/large-16-9/s3/lead/2014/10/dani-diamond-posing-how-to-model-photogaphy-best-top-fstoppersb.jpg" />
+      </div>
+      <button id="chamh-btn" ng-click="chonHinh()">
+        <i class="fas fa-sign-out-alt chamh-btn-icon"></i>
+        cho hình ảnh minh hoạ
+      </button>
     </div>
-    <button id="chamh-btn">
-      <i class="fas fa-sign-out-alt chamh-btn-icon"></i>
-      cho hình ảnh minh hoạ
-    </button>
-  </div>
-  <div class="div-right div-chung">
-    <div class="form div-center">
-      <label>Tên bộ phim:</label>
-      <input type="text" ng-model="movie.tenPhim">
-    </div>
-    <div class="form" class="div-center">
-      <label>Thể loại phim:</label>
-      <select ng-model="movie.theLoai">
+    <div class="div-right div-chung">
+      <div class="form div-center">
+        <label>Tên bộ phim:</label>
+        <input type="text" ng-model="movie.tenPhim">
+      </div>
+      <div class="form" class="div-center">
+        <label>Thể loại phim:</label>
+        <select ng-model="movie.theLoai">
           <option style="display:none" value="">Chọn thể loại</option>
-        <option>Tiểu sử lịch sử</option>
-        <option>Lãng mạn tình cảm</option>
-        <option>Khoa học viễn tưởng</option>
-        <option>Huyền bí huyền ảo</option>
-        <option>Phiêu lưu mạo hiểm</option>
-        <option>Phát luật hình sự</option>
-        <option>Chiến tranh cổ trang</option>
-        <option>Hành động</option>
-        <option>Tâm lý</option>
-        <option>Kinh dị</option>
-        <option>Hài hước</option>
-        <option>Hoạt hình</option>
-        <option>Thể thao</option>
-        <option>Kinh điển</option>
-        <option>Vui nhộn</option>
-        <option>Cổ trang</option>
-        <option>Võ thuật</option>
-      </select>
-    </div>
-    <div class="form" class="div-center" placeholder="Email">
-      <label>Thời gian phát hành:</label>
-      <div class="input-chung1">
-        <input type="text" ng-model="movie.thoiGianPhatHanh" id="date">
+          <option>Tiểu sử lịch sử</option>
+          <option>Lãng mạn tình cảm</option>
+          <option>Khoa học viễn tưởng</option>
+          <option>Huyền bí huyền ảo</option>
+          <option>Phiêu lưu mạo hiểm</option>
+          <option>Phát luật hình sự</option>
+          <option>Chiến tranh cổ trang</option>
+          <option>Hành động</option>
+          <option>Tâm lý</option>
+          <option>Kinh dị</option>
+          <option>Hài hước</option>
+          <option>Hoạt hình</option>
+          <option>Thể thao</option>
+          <option>Kinh điển</option>
+          <option>Vui nhộn</option>
+          <option>Cổ trang</option>
+          <option>Võ thuật</option>
+        </select>
+      </div>
+      <div class="form" class="div-center" placeholder="Email">
+        <label>Thời gian phát hành:</label>
+        <div class="input-chung1">
+          <input type="text" ng-model="movie.thoiGianPhatHanh" id="date">
+        </div>
+      </div>
+      <div class="form" class="div-center">
+        <label>Nội dung mô tả:</label>
+        <textarea ng-model="movie.moTa"
+          placeholder="Điền thông tin của phim, diễn viên chính, nội dung của phim..."></textarea>
       </div>
     </div>
-    <div class="form" class="div-center">
-      <label>Nội dung mô tả:</label>
-      <textarea ng-model="movie.moTa"
-        placeholder="Điền thông tin của phim, diễn viên chính, nội dung của phim..."></textarea>
+    <div class="header3">
+      <button id="tao-phim-btn" ng-click="taoPhim()">
+        <i class="fa fa-upload fa-lg tao-phim-btn-icon"></i>
+        tạo phim
+      </button>
     </div>
   </div>
-  <div class="header3">
-    <button id="tao-phim-btn" ng-click="taoPhim()">
-      <i class="fa fa-upload fa-lg tao-phim-btn-icon"></i>
-      tạo phim
-    </button>
-  </div>
-</div>
 
 
   <footer>
-    <p1>Copyright © Cinema Website 2017-2018</p1>
-  </footer>
-
-  <!-- Modal -->
-  <div class="modal fade" id="signupModal" tabindex="-1" role="dialog" aria-labelledby="signupleModalLabel"
-    aria-hidden="true">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="signupleModalLabel">đăng ký</h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        <div class="modal-body">
-          <form>
-            <div class="form-group">
-              <label for="tennguoidung-for" class="col-form-label">Tên người dùng:</label>
-              <input type="text" class="form-control" id="tennguoidung-id" ng-model="user.tenDangNhap">
-            </div>
-          </form>
-        </div>
-        <div class="modal-body">
-          <form>
-            <div class="form-group">
-              <label for="email-for" class="col-form-label">Địa chỉ email:</label>
-              <input type="email" class="form-control" id="email-id" ng-model="user.email">
-            </div>
-          </form>
-        </div>
-        <div class="modal-body">
-          <form>
-            <div class="form-group">
-              <label for="matkhau-for" class="col-form-label">Mật khẩu:</label>
-              <input type="password" class="form-control" id="matkhau-id" ng-model="user.matKhau">
-            </div>
-          </form>
-        </div>
-        <div class="modal-body">
-          <form>
-            <div class="form-group">
-              <label for="xacnhanmatkhau-for" class="col-form-label">Xác nhận mật khẩu:</label>
-              <input type="password" class="form-control" id="xacnhanmatkhau-id" ng-model="user.xacNhanMatKhau">
-            </div>
-          </form>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary float-left" data-dismiss="modal">Huỷ</button>
-          <button type="button" ng-click="dangKy()" class="btn btn-primary">Tạo Tài Khoản</button>
-        </div>
+      <div class="footer-cha">
+        <p1>Copyright © Cinema Website 2017-2018</p1>
       </div>
-    </div>
-  </div>
+    </footer>
 
-  <!-- Modal Đăng nhập -->
-  <!-- <div class="modal fade" id="signinModal" tabindex="-1" role="dialog" aria-labelledby="signinleModalLabel"
-    aria-hidden="true">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="signinleModalLabel">đăng nhập</h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        <div class="modal-body">
-          <form>
-            <div class="form-group">
-              <label for="emaildangnhap-for" class="col-form-label">Địa chỉ email:</label>
-              <input type="email" class="form-control" id="emaildangnhap-id" ng-model="user.email">
-            </div>
-          </form>
-        </div>
-        <div class="modal-body">
-          <form>
-            <div class="form-group">
-              <label for="matkhaudangnhap-for" class="col-form-label">Mật khẩu:</label>
-              <input type="password" class="form-control" id="matkhaudangnhap-id" ng-model="user.matKhau">
-            </div>
-          </form>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary float-left" data-dismiss="modal">Huỷ</button>
-          <button type="button" class="btn btn-primary" ng-click="dangNhap()">Đăng nhập</button>
-        </div>
-      </div>
-    </div>
-  </div> -->
-
+ 
 </body>
 
 </html>

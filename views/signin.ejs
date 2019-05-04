@@ -9,34 +9,24 @@
 
 </head>
 
-<body ng-app="cinema" ng-controller="homeController">
+<body ng-app="cinema" ng-controller="signinController">
   <header>
     <div class="header-cha">
       <div class="header-con">
         <h class="h1">
-          <img src="/images/Artboard 58.png" class="logo" />
+          <img src="/images/logo cinema hot.png" class="logo" />
         </h>
         <h class="h2">
           <a class="a1 trangchu" href="/">
             TRANG CHỦ
           </a>
-          <a class="a1 dangnhap" data-toggle="modal" data-target="#signinModal" href="/signup">
+          <a class="a1 dangnhap" href="/signin">
             ĐĂNG NHẬP
           </a>
-          <a class="a1 dangky" data-toggle="modal" data-target="#signupModal">
+          <a class="a1 dangky" href="/signup">
             ĐĂNG KÝ
           </a>
-          <!-- <a href="" class="h1" ng-click="dangXuat()">
-          <i class="fas fa-sign-out-alt icon-menu icon-username"></i>
-          ĐĂNG XUẤT
-          <a href="" class="h1">
-            <i class="fas fa-user icon-menu icon-username"></i>
-            {{username}}
-          </a>
-        </a>
-        <a href="/taophimmoi" class="h1">
-          TẠO PHIM MỚI
-        </a> -->
+
         </h>
       </div>
     </div>
@@ -52,8 +42,8 @@
       </div>
       <div class="content-bottom">
         <div class="content-bottom-con1">
-          <input class="input-signin" type=”text” name=”hoten” placeholder="Email" ng-model="user.email">
-          <input class="input-signin" type=”text” name=”hoten” placeholder="Mật Khẩu" ng-model="user.matKhau">
+          <input class="input-signin" type=”email” name=”hoten” placeholder="Email" ng-model="user.email">
+          <input class="input-signin" type="password" name=”hoten” placeholder="Mật Khẩu" ng-model="user.matKhau">
         </div>
 
         <b class="b2">
@@ -65,10 +55,21 @@
       </div>
     </div>
   </div>
+
+
   <footer>
-    <p1>Copyright © Cinema Website 2017-2018</p1>
+    <div class="footer-cha">
+      <p1>Copyright © Cinema Website 2017-2018</p1>
+    </div>
   </footer>
 
 </body>
 
 </html>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+  integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.8/angular.min.js"></script>
+
+
+<script src="/javascripts/signin.js"></script>
+<script src="/javascripts/cookie.js"></script>

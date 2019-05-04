@@ -17,7 +17,7 @@ header{
     margin: 0;
     width: 100%;
     height: 100%;
-    background-image: url(https://vignette.wikia.nocookie.net/test123321/images/0/0e/Community-header-background/revision/latest?cb=20181121173213);
+    background-image: url(https://steamuserimages-a.akamaihd.net/ugc/87098056441325324/ACEBC327098FA0F8E4A56E4FD7BB1CE37C7D2674/);
     background-size: cover;
     background-repeat: no-repeat;
     
@@ -26,7 +26,7 @@ header{
     float: left;
     width: 100%;
     height: 50%;
-    margin-top: 25px;
+    margin-top: 100px;
 }
 .h1{
     display: flex;
@@ -36,7 +36,9 @@ header{
     margin-bottom: 15px;
 }
 .logo{
-    transform: scale(0.8);
+    margin-left: 5px;
+    width: 220px;
+    height: 190px;
 }
 .h2{
     display: flex;
@@ -56,7 +58,7 @@ header{
 }
 
 .dangky{
-    background-color: #215769;
+    background-color: #6B90BF;
     border-radius: 50px;
     color: white;
     font-weight: bold;
@@ -64,11 +66,10 @@ header{
 
   
 .a1:hover{
-    background: #215769;
+    background: #6B90BF;
     cursor: pointer;
     color: white;
     border-radius: 50px;
-    font-weight: bold;
 }
 
 .icon-menu{
@@ -193,51 +194,64 @@ header{
 .b2{
     float: left;
     width: 100%;
+    text-align: center;
     height: 100px;
-    margin-top: 30px;
+    margin-top: 15px;
 
 } 
 
-.b2-1{
-    float: left;
-    margin-left: 90px;
-    
-}
-.b2-2{
-    float: right;
-    margin-right: 90px;
-    
-}
-
-#bnt-dangnhap,
-#bnt-huy{
-    background-image: url(/images/button\ 2.png);
+#bnt-dangky{
+    background-image: url(/images/button.png);
     background-repeat: no-repeat;
     background-size: cover;
-    width: 130px;
+    width: 220px;
     height: 55px;
     border-style: none;
     font-size: 16px;
     color: white;
-    text-transform: uppercase;
 }
 
+.icon-dangky{
+    zoom: 1.4;
+    position: relative;
+    top: 1px;
+}
+
+#bnt-dangky:hover{
+    cursor: pointer;
+}
 
 
 
 footer { 
-    margin-top: 30px;
+    margin: 0 auto;
     float: left;
-    display: block;
     width: 100%;
-    background:linear-gradient(#215769,#033e52);
-    height: 50px;
-    text-align: center;
+    height: 70px;
   
 }
-p1 {
-    color: white;
-    text-align: center;
-    line-height: 50px;
+
+.footer-cha{
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url(https://steamuserimages-a.akamaihd.net/ugc/87098056441325324/ACEBC327098FA0F8E4A56E4FD7BB1CE37C7D2674/);
+    transform: scale(-1);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 0px -400px;
 }
 
+p1 {
+    color: white;
+    line-height: 60px;
+    display: flex;
+    justify-content: center;
+    transform: scale(-1);
+}
+
+.input-signin:focus,
+#bnt-dangky{
+    outline: unset;
+    outline-offset: unset;
+}

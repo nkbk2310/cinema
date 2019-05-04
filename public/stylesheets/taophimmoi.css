@@ -11,41 +11,11 @@ body {
    height:100%;
 }
 
-/* header {
-  margin: 0 auto;
-  width: 100%;
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background: url(http://missiontampa.org/wp-content/uploads/2016/03/mission-tampa-header-background-dark-gray-001.jpg);
-  background-position: center center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  
-}
-
-
-.header-logo{
-  transform: scale(0.25);
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  position: relative;
-  top: -100px;
-}
-.header-logo:hover {
-  cursor: pointer;
-  } */
-
-.title-link,
+/* .title-link,
 .home-link{
   text-decoration: none;
 }
 
-/* .header-link-h1{
-  float: left;
-} */
 
 .header1{
   margin: 0;
@@ -115,7 +85,98 @@ h1{
 .fas{
   color: white;
   
+} */
+
+header{
+  margin: 0 auto;
+  width: 100%;
+  height: 560px;
 }
+.header-cha{
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url(https://steamuserimages-a.akamaihd.net/ugc/87098056441325324/ACEBC327098FA0F8E4A56E4FD7BB1CE37C7D2674/);
+  background-size: cover;
+  background-repeat: no-repeat;
+  
+}
+.header-con{
+  float: left;
+  width: 100%;
+  height: 50%;
+  margin-top: 100px;
+}
+
+.h1{
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height: 70%;
+  margin-bottom: 15px;
+}
+
+.logo{
+    margin-left: 5px;
+    width: 220px;
+    height: 190px;
+}
+
+.h2{
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height: 13%;
+
+}
+
+.a1{
+  line-height: 38px;
+  margin-left: 10px;
+  margin-right: 10px; 
+  padding: 0 25px;
+  color: white;
+  font-size: 15px;
+  text-decoration: none;
+  font-weight: lighter;
+}
+
+
+.a1:hover{
+  background: #6B90BF;
+  cursor: pointer;
+  color: white;
+  border-radius: 50px;
+  text-decoration: none;
+
+}
+
+.taophimmoi{
+  background-color: #6B90BF;
+  border-radius: 50px;
+  color: white;
+  font-weight: bold;
+}
+
+.h3{
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height: 13%;
+  color: white;
+
+}
+
+.a2{
+  line-height: 38px;
+  margin-left: 10px;
+  margin-right: 10px; 
+  padding: 0 25px;
+  font-size: 15px;
+  text-decoration: none;
+  font-weight: lighter;
+}
+
 .icon-user{
   zoom: 1.2;
 }
@@ -329,18 +390,29 @@ h1{
       float: left;
     }
     
-footer { 
-  margin-top: 30px;
-  float: left;
-  display: block;
-  width: 100%;
-  background:linear-gradient(#215769,#033e52);
-  height: 50px;
-  text-align: center;
-
-}
-p1 {
-  color: white;
-  text-align: center;
-  line-height: 50px;
-}
+    footer { 
+      margin: 0 auto;
+      float: left;
+      width: 100%;
+      height: 70px;
+    
+  }
+  
+  .footer-cha{
+      margin: 0;
+      width: 100%;
+      height: 100%;
+      background-image: url(https://steamuserimages-a.akamaihd.net/ugc/87098056441325324/ACEBC327098FA0F8E4A56E4FD7BB1CE37C7D2674/);
+      transform: scale(-1);
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: 0px -400px;
+  }
+  
+  p1 {
+      color: white;
+      line-height: 60px;
+      display: flex;
+      justify-content: center;
+      transform: scale(-1);
+  }

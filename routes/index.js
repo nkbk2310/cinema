@@ -6,13 +6,13 @@ router.get('/', function(req, res, next) {
   let email =req.session.email
   res.render('home', { email: email});
 });
-router.get('/taophimmoi', function(req, res, next) {
+router.get('/movie/create', function(req, res, next) {
   let email = req.session.email
   res.render('taophimmoi', { email: email});
 });
-router.get('/signin', function(req, res, next) {
+router.get('/signin', function(req, res, next) { //url trên trình duyệt
   let email = req.session.email
-  res.render('signin', { email: email});
+  res.render('signin', { email: email});  //vị trí file trong thư mục mặc định chỉ thay đổi đường link trên http
 });
 router.get('/signup', function(req, res, next) {
   let email = req.session.email

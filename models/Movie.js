@@ -19,7 +19,7 @@ let MovieSchema = new Schema ({
     },
     hinhMinhHoa: {
         type: String,
-        default: '',
+        default: 'https://ae01.alicdn.com/kf/HTB1gfbapy0TMKJjSZFNq6y_1FXah/Star-Wars-The-Last-Jedi-Movie-Poster-Episode-VIII-2017-Film-Art-Silk-Fabric-Poster-36.jpg',
     },
     thoiGianTao: {
         type: Number,

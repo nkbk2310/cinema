@@ -1,53 +1,26 @@
 var app = angular.module('cinema', []);
+var formData = new FormData()
+
 app.controller('taophimmoiController', function ($scope, $http) {
     $scope.movie = {}
     $scope.username = getCookie('username')
 
-    $scope.taoPhim = () => {
+    $scope.taoPhim = async () => {
+        let hinh = formData.get('hinh')
+
         if (!taoKhongThanhCong($scope.movie.tenPhim, $scope.movie.theLoai, $scope.movie.thoiGianPhatHanh)) {
-            $scope.movie.thoiGianPhatHanh = $("#date").datepicker('getDate').getTime();
-            $http.post('/api/v1/movie/', $scope.movie).then(function (res) {
-                window.alert('Tạo Phim Thành Công')
-                setTimeout(() => {
-                    window.location.href = '/'
-                }, 100);
-            })
-        }
-    }
-
-
-    $scope.user = {}
-    $scope.dangKy = () => {
-        if (!dangKyKhongThanhCong($scope.user.tenDangNhap, $scope.user.matKhau, $scope.user.xacNhanMatKhau, $scope.user.email)) {
-            $http.post('/api/v1/user/', $scope.user).then(function (res) {
-                window.alert(res.data.errorMessage || 'Đăng ký thành công')
-                if (!res.data.errorMessage) {
-                    setCookie('username', res.data.user.tenNguoiSuDung)
+            if (hinh) {
+                $scope.uploadHinh()
+            } else {
+                $scope.movie.thoiGianPhatHanh = $("#date").datepicker('getDate').getTime();
+                $http.post('/api/v1/movie/', $scope.movie).then(function (res) {
+                    window.alert('Tạo Phim Thành Công')
                     setTimeout(() => {
                         window.location.href = '/'
                     }, 100);
-                }
-            }).catch(function (res) {
-                console.log(res)
-            })
-        }
-    }
+                })
+            }
 
-    $scope.user = {}
-    $scope.dangNhap = () => {
-        if (!dangNhapKhongThanhCong($scope.user.email, $scope.user.matKhau)) {
-            $http.post('/api/v1/user/dang-nhap', $scope.user).then(function (res) {
-                if (res.data.errorMessage) {
-                    window.alert(res.data.errorMessage)
-                } else {
-                    setCookie('username', res.data.user.tenNguoiSuDung)
-                    setTimeout(() => {
-                        window.location.href = '/'
-                    }, 100);
-                }
-            }).catch(function (res) {
-                console.log(res)
-            })
         }
     }
 
@@ -65,6 +38,47 @@ app.controller('taophimmoiController', function ($scope, $http) {
 
     }
 
+    $scope.chonHinh = () => {
+        $('#hinhDuocChon').click()
+    }
+
+    $scope.uploadHinh = () => {
+        $.ajax({
+            url: '/api/v1/upload',
+            data: formData,
+            processData: false,
+            contentType: false,
+            type: 'POST',
+            success: function (res) {
+                $scope.movie.hinhMinhHoa = res.fileName
+                $scope.movie.thoiGianPhatHanh = $("#date").datepicker('getDate').getTime();
+                $http.post('/api/v1/movie/', $scope.movie).then(function (res) {
+                    window.alert('Tạo Phim Thành Công')
+                    setTimeout(() => {
+                        window.location.href = '/'
+                    }, 100);
+                })
+            }
+        });
+    }
+});
+
+// function doiHinh(hinh){
+//     if(hinh && hinh.files[0]){
+//         $('#hinhHienThi').attr('src', hinh.value)
+//     }
+//     console.log(hinh)
+// }
+
+$("#hinhDuocChon").change(function () {
+    if (this.files && this.files[0]) {
+        var reader = new FileReader();
+        reader.onload = function (e) {
+            $('#hinhHienThi').attr('src', e.target.result);
+        }
+        reader.readAsDataURL(this.files[0]);
+        formData.append('hinh', this.files[0])
+    }
 });
 
 
@@ -82,10 +96,7 @@ function taoKhongThanhCong(tenPhim, theLoai, thoiGianPhatHanh) {
         check = true
         alert('Nhập thể loại')
     }
-    else if (!thoiGianPhatHanh) {
-        check = true
-        alert('Nhập thời gian tạo')
-    }
+
     return check
 }
 

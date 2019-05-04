@@ -12,6 +12,7 @@ var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var movieRouter = require('./api/route/movie');
 var userRouter = require('./api/route/user')
+var uploadRouter = require('./api/route/upload')
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -32,6 +33,7 @@ app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/api/v1/movie', movieRouter);
 app.use('/api/v1/user', userRouter);
+app.use('/api/v1/upload', uploadRouter)
 
 
 // catch 404 and forward to error handler

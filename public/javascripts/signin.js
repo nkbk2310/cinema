@@ -1,8 +1,43 @@
 var app = angular.module('cinema', []);
-app.controller('userController', function ($scope, $http) {
+app.controller('signinController', function ($scope, $http) {
+    $scope.movies = {}
+    $scope.username = getCookie('username')
 
-    $http.get('/api/v1/movie/', $scope.movie).then(function (res) {
-        $scope.movies = res.data.ListMovie
-        $scope.username = getCookie('username')
-    })
-})
+    $scope.user = {}
+    $scope.dangNhap = () => {
+        if (!dangNhapKhongThanhCong($scope.user.email, $scope.user.matKhau)) {
+            $http.post('/api/v1/user/dang-nhap', $scope.user).then(function (res) {
+                if (res.data.errorMessage) {
+                    window.alert(res.data.errorMessage)
+                } else {
+                    setCookie('username', res.data.user.tenNguoiSuDung)
+                    setTimeout(() => {
+                        window.location.href = '/'
+                    }, 100);
+                }
+            }).catch(function (res) {
+                console.log(res)
+            })
+        }
+    }
+});
+
+
+
+function dangNhapKhongThanhCong(email, matKhau) {
+    let check = false
+    if (!email) {
+        check = true
+        alert('Chưa nhập email')
+    }
+    if (!matKhau) {
+        check = true
+        alert('Chưa nhập mật khẩu')
+    }
+    return check
+}
+
+function toTimestamp(strDate) {
+    var datum = Date.parse(strDate);
+    return datum / 1000;
+}
