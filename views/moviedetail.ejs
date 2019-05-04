@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel='stylesheet' href='/stylesheets/moviedetail.css' />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+        integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css" />
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"> -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.theme.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+
+
+</head>
+
+<body ng-app="cinema" ng-controller="taophimmoiController">
+
+    <header>
+        <div class="header-cha">
+            <div class="header-con">
+                <h class="h1">
+                    <img src="/images/logo cinema hot.png" class="logo" />
+                </h>
+                <h class="h2">
+                    <a class="a1 trangchu" href="/">
+                        TRANG CHỦ
+                    </a>
+                    <!-- <% if (!email) { %> -->
+                    <a href="/movie/detail" class="a1 danhsachphim">
+                        danh sách phim
+                    </a>
+                    <a class="a1 dangnhap" href="/signin">
+                        ĐĂNG NHẬP
+                    </a>
+                    <a class="a1 dangky" href="/signup">
+                        ĐĂNG KÝ
+                    </a>
+                    <!-- <% } else {%> -->
+                    <a href="/movie/create" class="a1 taophimmoi">
+                        TẠO PHIM MỚI
+                    </a>
+                    <a href="/movie/detail" class="a1 danhsachphim">
+                        danh sách phim
+                    </a>
+                    <a href="" class="a1" ng-click="dangXuat()">
+                        ĐĂNG XUẤT
+                    </a>
+                </h>
+                <h class="h3">
+                    <a class="a2">
+                        <i class="fas fa-user icon-menu icon-username"></i>
+                        {{username}}
+                    </a>
+                </h>
+                <!-- <%}%> -->
+            </div>
+        </div>
+    </header>
+
+    <input type="file" id="hinhDuocChon" ng-hide="true" accept="image/*">
+    <p class="title4">chi tiết phim</p>
+    <p id="id" ng-hide="true"><%=id%></p>
+    <div>
+        <div class="div-left div-chung">
+            <div class="img-chamh-div">
+                <img class="img-chamh" id="hinhHienThi"
+                    src="https://cdn.fstoppers.com/styles/large-16-9/s3/lead/2014/10/dani-diamond-posing-how-to-model-photogaphy-best-top-fstoppersb.jpg" />
+            </div>
+            <button id="chamh-btn" ng-click="chonHinh()">
+                <i class="fas fa-sign-out-alt chamh-btn-icon"></i>
+                cho hình ảnh minh hoạ
+            </button>
+        </div>
+        <div class="div-right div-chung">
+            <div class="form div-center">
+                <label>
+                    Tên bộ phim:
+                </label>
+                <input type="text" ng-model="movie.tenPhim" disabled>
+            </div>
+            <div class="form" class="div-center">
+                <label>
+                    Thể loại phim:
+                </label>
+                <input type="text" ng-model="movie.tenPhim" disabled>
+            </div>
+            <div class="form" class="div-center">
+                <label>
+                    Thời gian phát hành:
+                </label>
+                <input type="text" ng-model="movie.tenPhim" disabled>
+            </div>
+            <div class="form" class="div-center">
+                <label>Nội dung mô tả:</label>
+                <textarea ng-model="movie.moTa" disabled></textarea>
+            </div>
+        </div>
+        <!-- <div class="header3">
+            <button id="tao-phim-btn" ng-click="taoPhim()">
+                huỷ
+            </button>
+            <button id="tao-phim-btn" ng-click="taoPhim()">
+                    chỉnh sửa
+                </button> -->
+        </div>
+    </div>
+
+
+    <footer>
+        <div class="footer-cha">
+            <p1>Copyright © Cinema Website 2017-2018</p1>
+        </div>
+    </footer>
+
+
+</body>
+
+</html>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+    crossorigin="anonymous"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.8/angular.min.js"></script>
+
+
+
+<script src="/javascripts/moviedetail.js"></script>
+<script src="/javascripts/cookie.js"></script>

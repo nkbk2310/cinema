@@ -7,15 +7,12 @@ app.controller('signinController', function ($scope, $http) {
     $scope.dangNhap = () => {
         if (!dangNhapKhongThanhCong($scope.user.email, $scope.user.matKhau)) {
             $http.post('/api/v1/user/dang-nhap', $scope.user).then(function (res) {
-                if (res.data.errorMessage) {
-                    window.alert(res.data.errorMessage)
-                } else {
                     setCookie('username', res.data.user.tenNguoiSuDung)
                     setTimeout(() => {
                         window.location.href = '/'
                     }, 100);
-                }
             }).catch(function (res) {
+                window.alert(res.data.errorMessage)
                 console.log(res)
             })
         }

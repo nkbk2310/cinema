@@ -18,4 +18,9 @@ router.get('/signup', function(req, res, next) {
   let email = req.session.email
   res.render('signup', { email: email});
 });
+router.get('/movie/:id', function(req, res, next) {
+  let email = req.session.email
+  res.render('moviedetail', { id: req.params.id, email: email});
+});
+
 module.exports = router;

@@ -7,7 +7,7 @@ app.controller('signupController', function ($scope, $http) {
     $scope.dangKy = () => {
         if (!dangKyKhongThanhCong($scope.user.tenDangNhap, $scope.user.matKhau, $scope.user.xacNhanMatKhau, $scope.user.email)) {
             $http.post('/api/v1/user/', $scope.user).then(function (res) {
-                window.alert(res.data.errorMessage || 'Đăng ký thành công')
+                // window.alert(res.data.errorMessage || 'Đăng ký thành công')
                 if (!res.data.errorMessage) {
                     setCookie('username', res.data.user.tenNguoiSuDung)
                     setTimeout(() => {

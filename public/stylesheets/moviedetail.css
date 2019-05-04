@@ -1,6 +1,4 @@
-
-
-html {
+viehtml {
   height: 100%;
 }
 
@@ -11,86 +9,11 @@ body {
    height:100%;
 }
 
-/* .title-link,
-.home-link{
-  text-decoration: none;
-}
-
-
-.header1{
-  margin: 0;
-  width: 100%;
-  height: 200px;
-  background-image: url(https://s4isystems.com/wp-content/uploads/2014/11/header-background-2.jpg);
-  background-repeat: no-repeat;
-  
-}
-.logo{
-  transform: scale(0.4);
-  display: block;
-  margin: auto;
-  position: relative;
-  top: -111px;
-
-}
-
-.header2{
-  background: linear-gradient(#215769,#033e52);
-  height: 40px;
-  padding-right: 20px;
-  padding-left: 25px;
-  
-}
-
-
-.header2-1{
-  float: right;
-  position: relative;
-  top: 6px;
-}
-
-h1{
-  float: left;
-  color: #0d5669;
-  margin: 0;
-  font-size: 18px;
-  line-height: 100px;
-  padding-left: 15px;
-  padding-right: 15px;
-
-}
-
-.header2-1 .h1{
-  float: right;
-  line-height: 30px;
-  margin-left: 10px;
-  margin-right: 10px; 
-  padding: 0 10px;
-  color: white;
-  font-size: 15px;
-  margin: 0;
-}
-.header2-2{
-  float: left;
-  position: relative;
-  top: 6px;
-}
-
-.h1:hover,
-.icon:hover{
-  background: #dadee8;
-  cursor: pointer;
-}
-
-.fas{
-  color: white;
-  
-} */
-
 header{
   margin: 0 auto;
   width: 100%;
   height: 350px;
+  margin-bottom: 30px;
 }
 .header-cha{
   margin: 0;
@@ -101,7 +24,6 @@ header{
   background-repeat: no-repeat;
   
 }
-
 .header-con{
   float: left;
   width: 100%;
@@ -140,6 +62,7 @@ header{
   font-size: 15px;
   text-decoration: none;
   font-weight: lighter;
+  text-transform: uppercase;
 }
 
 
@@ -149,10 +72,12 @@ header{
   color: white;
   border-radius: 50px;
   text-decoration: none;
+  text-transform: uppercase;
+
 
 }
 
-.taophimmoi{
+.danhsachphim{
   background-color: #6B90BF;
   border-radius: 50px;
   color: white;
@@ -178,43 +103,20 @@ header{
   font-weight: lighter;
 }
 
-.icon-user{
-  zoom: 1.2;
-}
-.icon-sign-out{
-  zoom: 1.4;
-  position: relative;
-  top: 2px;
-}
-.icon-upload{
-  zoom: 0.9;
-}
-.icon-username{
-  transform: scale(1.3);
-  margin-right: 4px;
-}
-.icon-home{
-  zoom: 1.4;
-}
-.icon-back{
-  zoom: 1.4;
-  margin-left: 15px;
 
-}
-.icon{
-  padding: 0 5px;
-  line-height: 22px !important
-}
 
 .title4{
   text-align: center;
   font-size: 30px;
-  color: black;
-  margin-top: 50px
+  color: #6B90BF;
+  margin-top: 50px;
+  text-transform: uppercase;
+  font-weight: bold
 }
+
 .div-chung{
   float: left;
-  min-height: 359px
+  min-height: 500px
 }
 
 .div-left{
@@ -300,7 +202,7 @@ header{
 #tao-phim-btn{
   width: 150px;
   height: 40px;
-  background-color: #6B90BF;
+  background: linear-gradient(90deg ,#215769,#033e52);
   border-radius: 28px;
   font-size: 18px;
   color: white;
@@ -317,83 +219,108 @@ header{
   margin-top: 2px;
 
 }
+#dang-nhap-btn{
+  width: 160px;
+  height: 40px;
+  background: linear-gradient(90deg ,#215769,#033e52);
+  border-radius: 28px;
+  font-size: 18px;
+  color: white;
+  text-transform: uppercase;
+  margin-left: 30px;
+
+}
+.dang-nhap-btn-icon{
+  transform: scale(1.3);
+  /* color: #404859; */
+  color: white;
+  float: left;
+  margin-left: 8px;
+  /* margin-top: 2px; */
+
+}
 
 #tao-phim-btn:hover,
 .tao-phim-btn-icon:hover,
+#dang-nhap-btn:hover,
+.dang-nhap-btn-icon:hover,
 #chamh-btn:hover{
   background: #dadee8;
   cursor: pointer;
-  }
+}
 
-  #chamh-btn{
-    width: 280px;
-    height: 45px;
-    border-radius: 28px;
-    background-color: #6B90BF;
-    font-size: 18px;
-    color: white;
-    text-transform: uppercase;
-  position: relative;
-    top: 15px;
+#chamh-btn{
+  width: 280px;
+  height: 45px;
+  background: linear-gradient(90deg ,#215769,#033e52);
+  border-radius: 28px;
+
+  font-size: 18px;
+  color: white;
+  text-transform: uppercase;
+  position: absolute;
+  bottom: 0%;
   left: 42%;
 
-  }
-  
-  .chamh-btn-icon{
-    transform: scale(0.87);
-    /* color: #404859; */
-    color: white;
-    float: left;
-    margin-left: 12px;
-    margin-top: 2px;
-    }
+}
 
-    .img-chamh{ 
-      height: 70%;
-      width: 70%;
-      margin-left: 28%;
-    }
+.chamh-btn-icon{
+  transform: scale(0.87);
+  /* color: #404859; */
+  color: white;
+  float: left;
+  margin-left: 12px;
+  margin-top: 2px;
+}
+.img-chamh{
 
-    .img-chamh-div{
-      position: relative;
-      border-color: #9CAFD9;
-      border-width: 5px;
-    }
+  height: 70%;
+  width: 70%;
+  margin-left: 28%;
+}
+.img-chamh-div{
+  position: absolute;
+  bottom: 80px;
+  border-color: #9CAFD9;
+  border-width: 5px;
+}
+.footer-div{
+  background-color: #9CAFD9;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  color: white;
+  text-align: center;
+  float: left;
+}
 
-    .footer-div{
-      background-color: #9CAFD9;
-      position: absolute;
-      bottom: 0;
-      width: 100%;
-      color: white;
-      text-align: center;
-      float: left;
-    }
+
     
-    footer { 
-      margin: 0 auto;
-      float: left;
-      width: 100%;
-      height: 70px;
-      margin-top: 30px;
-    
-  }
+
+footer { 
+  margin: 0 auto;
+  float: left;
+  width: 100%;
+  height: 70px;
+  margin-top: 50px;
+      
+}
   
-  .footer-cha{
-      margin: 0;
-      width: 100%;
-      height: 100%;
-      background-image: url(https://steamuserimages-a.akamaihd.net/ugc/87098056441325324/ACEBC327098FA0F8E4A56E4FD7BB1CE37C7D2674/);
-      transform: scale(-1);
-      background-size: cover;
-      background-repeat: no-repeat;
-      background-position: 0px -400px;
-  }
+.footer-cha{
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url(https://steamuserimages-a.akamaihd.net/ugc/87098056441325324/ACEBC327098FA0F8E4A56E4FD7BB1CE37C7D2674/);
+  transform: scale(-1);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 0px -400px;
+}
   
-  p1 {
-      color: white;
-      line-height: 60px;
-      display: flex;
-      justify-content: center;
-      transform: scale(-1);
-  }
+p1 {
+  color: white;
+  line-height: 60px;
+  display: flex;
+  justify-content: center;
+  transform: scale(-1);
+}

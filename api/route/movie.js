@@ -26,4 +26,14 @@ router.get('/', async function(req,res){
     }
 })
 
+router.get('/:id', async function(req,res){
+    try {
+        let response = await movieController.getMovieDetail(req.params.id)
+        res.send(response)
+    } catch (error) {
+        res.send(error)
+    }
+})
+
+
 module.exports = router

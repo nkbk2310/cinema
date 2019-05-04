@@ -27,7 +27,18 @@ const getListMovie = async () => {
     }
 } 
 
+async function getMovieDetail (id) {
+    let movie = await Movie.findById(id)
+    if (!movie){
+        throw {errorMessage: 'Không tìm thấy phim'}
+    }
+    return {
+        movie: movie
+    }
+}
+
 module.exports = {
     createMovie,
     getListMovie,
+    getMovieDetail
 }

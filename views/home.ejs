@@ -67,17 +67,19 @@
   <div class="content">
     <div class="content-chung">
       <div class="content-con" ng-repeat="movie in movies">
+      <a href="/movie/{{movie._id}}">
         <div class="content-con-1">
           <img
             ng-src="{{movie.hinhMinhHoa ? '/images/upload/' + movie.hinhMinhHoa : 'https://ae01.alicdn.com/kf/HTB1gfbapy0TMKJjSZFNq6y_1FXah/Star-Wars-The-Last-Jedi-Movie-Poster-Episode-VIII-2017-Film-Art-Silk-Fabric-Poster-36.jpg'}}"
             class="content-img">
           <div class="content-p">
-            <p>Tên phim: {{movie.tenPhim}}</p>
-            <p>Thể loại: {{movie.theLoai}}</p>
-            <p>Ngày phát hành: {{movie.thoiGianPhatHanh | date: 'dd/MM/yyyy'}}</p>
-            <p>Mô tả: {{movie.moTa}}</p>
+            <p class="p1">Tên phim: {{movie.tenPhim}}</p>
+            <p class="p1">Thể loại: {{movie.theLoai}}</p>
+            <p class="p1">Ngày phát hành: {{movie.thoiGianPhatHanh | date: 'dd/MM/yyyy'}}</p>
+            <p class="p1">Mô tả: {{movie.moTa}}</p>
           </div>
         </div>
+      </a>
       </div>
     </div>
   </div>
