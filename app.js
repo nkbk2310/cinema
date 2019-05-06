@@ -28,6 +28,13 @@ app.use(session({
   resave: false,
   saveUninitialized: true
 }))
+//Thiết lập kết nối tới Mongoose
+var mongoose = require('mongoose');
+var mongoDB = 'mongodb://admin:admin123@ds151124.mlab.com:51124/cinemadb';
+mongoose.connect(mongoDB);
+mongoose.Promise = global.Promise;
+var db = mongoose.connection;
+db.on('error', console.error.bind(console, 'MongoDB connection error:'));
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
@@ -56,10 +63,3 @@ app.use(function(err, req, res, next) {
 
 module.exports = app;
 
-//Thiết lập kết nối tới Mongoose
-var mongoose = require('mongoose');
-var mongoDB = 'mongodb://admin:admin123@ds151124.mlab.com:51124/cinemadb';
-mongoose.connect(mongoDB);
-mongoose.Promise = global.Promise;
-var db = mongoose.connection;
-db.on('error', console.error.bind(console, 'MongoDB connection error:'));

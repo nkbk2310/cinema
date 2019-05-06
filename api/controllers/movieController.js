@@ -21,24 +21,56 @@ const createMovie = async (data) => {
 }
 
 const getListMovie = async () => {
-    let ListMovie = await Moive.find().sort({thoiGianTao: -1})
+    let ListMovie = await Moive.find().sort({ thoiGianTao: -1 })
     return {
         ListMovie: ListMovie
     }
-} 
+}
 
-async function getMovieDetail (id) {
-    let movie = await Movie.findById(id)
-    if (!movie){
-        throw {errorMessage: 'Không tìm thấy phim'}
+const getMovieDetail = async function (id) {
+    let movie = await Moive.findById(id)
+    if (!movie) {
+        throw { errorMessage: 'Không tìm thấy phim' }
     }
     return {
         movie: movie
     }
 }
 
+// viết hàm chỉnh sửa
+const editMovie = async function (id, data) {
+    let movie = await Moive.findById(id)
+    if (!movie) {
+        throw { errorMessage: 'Không tìm thấy phim' }
+    }
+    //đưa dữ liệu từ dưới client lên server
+    movie.tenPhim = data.tenPhim
+    movie.theLoai = data.theLoai
+    movie.thoiGianPhatHanh = data.thoiGianPhatHanh
+    movie.moTa = data.moTa
+    movie.hinhMinhHoa = data.hinhMinhHoa || ''
+
+    //lưu dữ liệu xuống database 
+    movie = await movie.save()
+
+    return {
+        movie: movie
+    }
+}
+
+const delMovie = async function (id) {
+    let movie = await Moive.findById(id)
+    if (!movie) {
+        throw { errorMessage: 'Không tìm thấy phim'}
+    }
+    await Moive.deleteOne({_id: movie._id})
+    return { errorMessage: 'Xoá phim thành công'}
+}
+
 module.exports = {
     createMovie,
     getListMovie,
-    getMovieDetail
+    getMovieDetail,
+    editMovie,
+    delMovie
 }

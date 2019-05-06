@@ -53,7 +53,7 @@ app.controller('taophimmoiController', function ($scope, $http) {
                 $scope.movie.hinhMinhHoa = res.fileName
                 $scope.movie.thoiGianPhatHanh = $("#date").datepicker('getDate').getTime();
                 $http.post('/api/v1/movie/', $scope.movie).then(function (res) {
-                    window.alert('Tạo Phim Thành Công')
+                    // window.alert('Tạo Phim Thành Công')
                     setTimeout(() => {
                         window.location.href = '/'
                     }, 100);

@@ -1,7 +1,7 @@
 var app = angular.module('cinema', []);
 var formData = new FormData()
 
-app.controller('taophimmoiController', function ($scope, $http) {
+app.controller('moviedetailController', function ($scope, $http) {
     $scope.movie = {}
     $scope.username = getCookie('username')
 
@@ -9,30 +9,49 @@ app.controller('taophimmoiController', function ($scope, $http) {
 
     $http.get('/api/v1/movie/'+id).then(function (res) {
        $scope.movie = res.data.movie
+       $scope.dataTemp = JSON.parse(JSON.stringify($scope.movie)) 
+
     }).catch(function(res){
         window.alert(res.data.errorMessage)
     })
 
+    $(document).ready(function () {
+        $('#date').datepicker('setDate', new Date($scope.movie.thoiGianPhatHanh));
+    });
 
 
-    $scope.taoPhim = async () => {
+
+    $scope.huy = () => {
+        $scope.movie = $scope.dataTemp
+    }
+
+    $scope.luu = async () => {
         let hinh = formData.get('hinh')
-
-        if (!taoKhongThanhCong($scope.movie.tenPhim, $scope.movie.theLoai, $scope.movie.thoiGianPhatHanh)) {
+        if (!luuKhongThanhCong($scope.movie.tenPhim, $scope.movie.theLoai, $scope.movie.thoiGianPhatHanh)) {
             if (hinh) {
                 $scope.uploadHinh()
             } else {
                 $scope.movie.thoiGianPhatHanh = $("#date").datepicker('getDate').getTime();
-                $http.post('/api/v1/movie/', $scope.movie).then(function (res) {
-                    window.alert('Tạo Phim Thành Công')
+                $http.put('/api/v1/movie/'+id, $scope.movie).then(function (res) {
                     setTimeout(() => {
-                        window.location.href = '/'
+                    $scope.isEdit = false
+                    window.location.reload()
                     }, 100);
                 })
             }
+        }
+    } 
 
+    $scope.xoa = () => {
+        if (confirm('Bạn có chắc có xoá phim hay không?')) {
+            $http.delete('/api/v1/movie/'+id).then(function (res) {
+                setTimeout(() => {
+                    window.location.href = '/'
+                }, 100)
+            })
         }
     }
+
 
     $scope.dangXuat = () => {
         if (confirm('Bạn có chắc có đăng xuất hay không?')) {
@@ -52,6 +71,7 @@ app.controller('taophimmoiController', function ($scope, $http) {
         $('#hinhDuocChon').click()
     }
 
+
     $scope.uploadHinh = () => {
         $.ajax({
             url: '/api/v1/upload',
@@ -62,10 +82,10 @@ app.controller('taophimmoiController', function ($scope, $http) {
             success: function (res) {
                 $scope.movie.hinhMinhHoa = res.fileName
                 $scope.movie.thoiGianPhatHanh = $("#date").datepicker('getDate').getTime();
-                $http.post('/api/v1/movie/', $scope.movie).then(function (res) {
-                    window.alert('Tạo Phim Thành Công')
+                $http.put('/api/v1/movie/'+id, $scope.movie).then(function (res) {
                     setTimeout(() => {
-                        window.location.href = '/'
+                    $scope.isEdit = false
+                    window.location.reload()
                     }, 100);
                 })
             }
@@ -93,60 +113,21 @@ $("#hinhDuocChon").change(function () {
 
 
 
-function taoKhongThanhCong(tenPhim, theLoai, thoiGianPhatHanh) {
+function luuKhongThanhCong(tenPhim, theLoai) {
     let check = false
     if (!tenPhim) {
         check = true
-        alert('Tên phim chưa nhập')
+        alert('Vui lòng nhập tên phim')
     }
-    // Thông báo 1 dòng
-    // else (.....)
-    // if (.....) 
     else if (!theLoai) {
         check = true
-        alert('Nhập thể loại')
+        alert('Vui lòng nhập thể loại')
     }
 
     return check
 }
 
-function dangKyKhongThanhCong(tenDangNhap, matKhau, xacNhanMatKhau, email) {
-    let check = false
-    if (!tenDangNhap) {
-        check = true
-        alert('Chưa nhập tên đăng nhập')
-    }
-    if (!matKhau) {
-        check = true
-        alert('Chưa nhập mật khẩu')
-    }
-    if (!xacNhanMatKhau) {
-        check = true
-        alert('Chưa nhập xác nhập mật khẩu')
-    }
-    if (!email) {
-        check = true
-        alert('Chưa nhập email')
-    }
-    if (matKhau !== xacNhanMatKhau) {
-        check = true
-        alert('Mật khẩu không trùng khớp')
-    }
-    return check
-}
 
-function dangNhapKhongThanhCong(email, matKhau) {
-    let check = false
-    if (!email) {
-        check = true
-        alert('Chưa nhập email')
-    }
-    if (!matKhau) {
-        check = true
-        alert('Chưa nhập mật khẩu')
-    }
-    return check
-}
 
 function toTimestamp(strDate) {
     var datum = Date.parse(strDate);

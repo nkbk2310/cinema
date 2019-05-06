@@ -144,12 +144,11 @@
 
 <script>
   $(function () {
-    $("#date").datepicker();
+    $("#date").datepicker({ dateFormat: 'dd/mm/yy' });
   });
   $(document).ready(function () {
     $('#date').datepicker('setDate', 'today');
   });
-
 </script>
 
 <script src="/javascripts/taophimmoi.js"></script>

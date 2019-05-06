@@ -18,7 +18,7 @@
 
 </head>
 
-<body ng-app="cinema" ng-controller="taophimmoiController">
+<body ng-app="cinema" ng-controller="moviedetailController">
 
     <header>
         <div class="header-cha">
@@ -30,7 +30,7 @@
                     <a class="a1 trangchu" href="/">
                         TRANG CHỦ
                     </a>
-                    <!-- <% if (!email) { %> -->
+                    <% if (!email) { %>
                     <a href="/movie/detail" class="a1 danhsachphim">
                         danh sách phim
                     </a>
@@ -40,11 +40,11 @@
                     <a class="a1 dangky" href="/signup">
                         ĐĂNG KÝ
                     </a>
-                    <!-- <% } else {%> -->
+                    <% } else {%>
                     <a href="/movie/create" class="a1 taophimmoi">
                         TẠO PHIM MỚI
                     </a>
-                    <a href="/movie/detail" class="a1 danhsachphim">
+                    <a class="a2 danhsachphim">
                         danh sách phim
                     </a>
                     <a href="" class="a1" ng-click="dangXuat()">
@@ -57,7 +57,7 @@
                         {{username}}
                     </a>
                 </h>
-                <!-- <%}%> -->
+                <%}%>
             </div>
         </div>
     </header>
@@ -65,62 +65,118 @@
     <input type="file" id="hinhDuocChon" ng-hide="true" accept="image/*">
     <p class="title4">chi tiết phim</p>
     <p id="id" ng-hide="true"><%=id%></p>
-    <div>
-        <div class="div-left div-chung">
-            <div class="img-chamh-div">
-                <img class="img-chamh" id="hinhHienThi"
-                    src="https://cdn.fstoppers.com/styles/large-16-9/s3/lead/2014/10/dani-diamond-posing-how-to-model-photogaphy-best-top-fstoppersb.jpg" />
-            </div>
-            <button id="chamh-btn" ng-click="chonHinh()">
-                <i class="fas fa-sign-out-alt chamh-btn-icon"></i>
-                cho hình ảnh minh hoạ
-            </button>
-        </div>
-        <div class="div-right div-chung">
-            <div class="form div-center">
-                <label>
-                    Tên bộ phim:
-                </label>
-                <input type="text" ng-model="movie.tenPhim" disabled>
-            </div>
-            <div class="form" class="div-center">
-                <label>
-                    Thể loại phim:
-                </label>
-                <input type="text" ng-model="movie.tenPhim" disabled>
-            </div>
-            <div class="form" class="div-center">
-                <label>
-                    Thời gian phát hành:
-                </label>
-                <input type="text" ng-model="movie.tenPhim" disabled>
-            </div>
-            <div class="form" class="div-center">
-                <label>Nội dung mô tả:</label>
-                <textarea ng-model="movie.moTa" disabled></textarea>
-            </div>
-        </div>
-        <!-- <div class="header3">
-            <button id="tao-phim-btn" ng-click="taoPhim()">
-                huỷ
-            </button>
-            <button id="tao-phim-btn" ng-click="taoPhim()">
-                    chỉnh sửa
-                </button> -->
-        </div>
-    </div>
+
+                <content class="content1">
+                    <content class="content1-cha">
+                        <div class="content-left">
+                            <div class="content-img">
+                                <img class="img-chamh" id="hinhHienThi"
+                                    ng-src="{{movie.hinhMinhHoa ? '/images/upload/' + movie.hinhMinhHoa : 'https://ae01.alicdn.com/kf/HTB1gfbapy0TMKJjSZFNq6y_1FXah/Star-Wars-The-Last-Jedi-Movie-Poster-Episode-VIII-2017-Film-Art-Silk-Fabric-Poster-36.jpg'}}" />
+                            </div>
+                        </div>
+                        <div class="content-right">
+                            <div class="form div-center">
+                                <label>
+                                    Tên bộ phim:
+                                </label>
+                                <input type="text" ng-model="movie.tenPhim" ng-hide="isEdit" disabled>
+                                <input type="text" ng-model="movie.tenPhim" ng-hide="!isEdit">                               
+                            </div>
+                            <div class="form" class="div-center">
+                                <label>
+                                    Thể loại phim:
+                                </label>
+                                <input type="text" ng-model="movie.theLoai" ng-hide="isEdit" disabled>
+                                <select ng-model="movie.theLoai" ng-hide="!isEdit">
+                                        <option style="display:none" value="">Chọn thể loại</option>
+                                        <option>Tiểu sử lịch sử</option>
+                                        <option>Lãng mạn tình cảm</option>
+                                        <option>Khoa học viễn tưởng</option>
+                                        <option>Huyền bí huyền ảo</option>
+                                        <option>Phiêu lưu mạo hiểm</option>
+                                        <option>Phát luật hình sự</option>
+                                        <option>Chiến tranh cổ trang</option>
+                                        <option>Hành động</option>
+                                        <option>Tâm lý</option>
+                                        <option>Kinh dị</option>
+                                        <option>Hài hước</option>
+                                        <option>Hoạt hình</option>
+                                        <option>Thể thao</option>
+                                        <option>Kinh điển</option>
+                                        <option>Vui nhộn</option>
+                                        <option>Cổ trang</option>
+                                        <option>Võ thuật</option>
+                                    </select>
+                            </div>
+                            <div class="form" class="div-center">
+                                <label>
+                                    Thời gian phát hành:
+                                </label>
+                                <input type="text" ng-disabled="!isEdit" id="date">
+                            </div>
+                            <div class="form" class="div-center">
+                                <label>Nội dung mô tả:</label>
+                                <textarea ng-model="movie.moTa" ng-model="movie.moTa" ng-hide="isEdit"
+                                    disabled></textarea>
+                                <textarea ng-model="movie.moTa" ng-model="movie.moTa" ng-hide="!isEdit"></textarea>
+                            </div>
+                        </div>
+                    </content>
+                </content>
 
 
-    <footer>
-        <div class="footer-cha">
-            <p1>Copyright © Cinema Website 2017-2018</p1>
-        </div>
-    </footer>
+                <input type="file" id="hinhDuocChon" ng-hide="true" accept="image/*">
+                <content class="content2">
+                    <content class="content2-cha">
+                        <div class="button-left">
+                            <button class="content2-bt bt-chonhinhanh" ng-hide="!isEdit" ng-click="chonHinh()">
+                                <i class="fa fa-upload fa-lg icon-chonhinhanh"></i>
+                                chọn hình ảnh
+                            </button>
+                        </div>
+                        <div class="button-right">
+                            <button class="content2-bt bt-huy" ng-hide="isEdit" ng-click="xoa()">
+                                <i class="fa fa-upload fa-lg icon-huy"></i>
+                                xoá
+                            </button>
+                            <button class="content2-bt bt-huy" ng-hide="!isEdit" ng-click="isEdit=false; huy()">
+                                <i class="fa fa-upload fa-lg icon-huy"></i>
+                                huỷ
+                            </button>
+                            <button class="content2-bt bt-chinhsua" ng-hide="isEdit" ng-click="isEdit=true">
+                                <i class="fa fa-upload fa-lg icon-chinhsua"></i>
+                                chỉnh sửa
+                            </button>
+                            <button class="content2-bt bt-huy" ng-hide="!isEdit" ng-click="luu()">
+                                <i class="fa fa-upload fa-lg icon-huy"></i>
+                                Lưu
+                            </button>
+                        </div>
+                    </content>
+                </content>
+
+
+
+                <footer>
+                    <div class="footer-cha">
+                        <p1>Copyright © Cinema Website 2017-2018</p1>
+                    </div>
+                </footer>
 
 
 </body>
 
 </html>
+
+<script ng-hide="!isEdit">
+    $(function () {
+        $("#date").datepicker({ dateFormat: 'dd/mm/yy' });
+    });
+    $(document).ready(function () {
+    $('#date').datepicker('setDate', 'today');
+  });
+    
+</script>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
     integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
