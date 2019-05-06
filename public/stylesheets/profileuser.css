@@ -1,0 +1,357 @@
+viehtml {
+  height: 100%;
+}
+
+body {
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  margin:0;
+   padding:0;
+   height:100%;
+}
+
+header{
+  margin: 0 auto;
+  width: 100%;
+  height: 350px;
+  margin-bottom: 30px;
+}
+.header-cha{
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url(https://steamuserimages-a.akamaihd.net/ugc/87098056441325324/ACEBC327098FA0F8E4A56E4FD7BB1CE37C7D2674/);
+  background-size: cover;
+  background-repeat: no-repeat;
+  
+}
+.header-con{
+  float: left;
+  width: 100%;
+  height: 50%;
+  margin-top: 15px;
+}
+
+.h1{
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height: 130%;
+  margin-bottom: 15px;
+}
+
+.logo{
+    margin-left: 5px;
+    width: 220px;
+    height: 190px;
+}
+
+.h2{
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height: 22%;
+
+}
+
+.a1,
+.a2{
+  line-height: 38px;
+  margin-left: 10px;
+  margin-right: 10px; 
+  padding: 0 25px;
+  color: white;
+  font-size: 15px;
+  text-decoration: none;
+  font-weight: lighter;
+  text-transform: uppercase;
+}
+
+
+.a1:hover{
+  background: #6B90BF;
+  cursor: pointer;
+  color: white;
+  border-radius: 50px;
+  text-decoration: none;
+  text-transform: uppercase;
+
+
+}
+
+.profile{
+  background-color: #6B90BF;
+  border-radius: 50px;
+  color: white;
+  font-weight: bold;
+}
+
+.h3{
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height: auto;
+  color: white;
+
+}
+
+.a2{
+  line-height: 38px;
+  margin-left: 10px;
+  margin-right: 10px; 
+  padding: 0 25px;
+  font-size: 15px;
+  text-decoration: none;
+  font-weight: lighter;
+}
+
+
+
+.title4{
+  text-align: center;
+  font-size: 30px;
+  color: #6B90BF;
+  margin-top: 50px;
+  text-transform: uppercase;
+  font-weight: bold
+}
+
+.content1{
+  float: left;
+  width: 100%;
+  height: 450px;
+  display: flex;
+  justify-content: center;
+}
+
+.content1-cha{
+  display: flex;
+  justify-content: center;
+  width: 80%;
+  height: 100%;
+}
+
+.content-left{
+  float: left;
+  width: 40%;
+  height: 90%;
+  /* position: relative; */
+  margin-top: 20px;
+
+}
+
+.content-img{
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+
+}
+
+.img-chamh{
+  height: 90%;
+  width: 90%;
+  /* background-size: cover;
+  background-repeat: no-repeat; */
+  object-fit: contain;
+}
+
+
+.chamh-btn-icon{
+  transform: scale(0.87);
+  /* color: #404859; */
+  color: white;
+  float: left;
+  margin-left: 12px;
+  margin-top: 2px;
+}
+
+
+
+.content-right{
+  float: right;
+  width: 50%;
+  height: 100%;
+
+}
+
+.form{
+  display: grid;
+  margin-top: 25px;
+  font-size: 16px;
+}
+
+.form > input {
+  height: 35px;
+  margin-top: 5px;
+  font-size: 16px;
+}
+
+.text{
+  height: 25px;
+  width: 45%;
+  margin-top: 5px;
+  padding-left: 5px;
+}
+
+.input-chung1{
+  width: 61%;
+}
+
+.text2{
+  float: right;
+}
+
+.form > select ,
+.form > div > select{
+  width: 100%;
+  height: 35px;
+  margin-top: 5px;
+  padding-left: 5px;
+  font-size: 14px;
+}
+
+.form > div > select{
+  width: 45%;
+  height: 35px;
+  margin-top: 5px;
+  padding-left: 5px;
+  font-size: 14px;
+}
+
+.form > textarea {
+  width: 100%%;
+  height: 100px;
+  margin-top: 5px;
+  padding-left: 5px;
+  font-size: 14px;
+  font-style: italic;
+  color: #636466
+}
+
+.form > div > input{
+  width: 65.5%;
+  height: 35px;
+  margin-top: 5px;
+  font-size: 14px;
+  padding-left: 5px;
+
+}
+
+.header3{
+  float: left;
+  width: 100%;
+  text-align: center;
+  margin-top: 30px;
+
+
+}
+
+
+
+.content2{
+  float: left;
+  width: 100%;
+  height: 70px;
+  display: flex;
+  justify-content: center;
+}
+
+.content2-cha{
+  display: flex;
+  justify-content: center;
+  width: 80%;
+  height: 100%;
+}
+
+.button-left{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40%;
+  height: 100%;
+
+}
+
+.bt-chonhinhanh{
+  border-radius: 28px;
+  width: 220px;
+  height: 40px;
+}
+
+
+
+.button-right{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  float: right;
+  width: 50%;
+  height: 100%;
+}
+
+
+.content2-bt{
+  background-color: #6B90BF;
+  font-size: 18px;
+  color: white;
+  text-transform: uppercase;
+
+}
+
+.bt-huy{
+  border-radius: 28px;
+  width: 120px;
+  height: 40px;
+}
+
+.bt-chinhsua{
+  border-radius: 28px;
+  width: 170px;
+  height: 40px;
+}
+
+.icon-huy,
+.icon-chinhsua,
+.icon-chonhinhanh{
+  transform: scale(0.87);
+  color: white;
+  float: left;
+  margin-left: 12px;
+  margin-top: 2px;
+}
+
+.content2-bt:hover{
+  background: #dadee8;
+  cursor: pointer;
+}
+
+
+    
+
+footer { 
+  margin: 0 auto;
+  float: left;
+  width: 100%;
+  height: 70px;
+  margin-top: 50px;
+      
+}
+  
+.footer-cha{
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url(https://steamuserimages-a.akamaihd.net/ugc/87098056441325324/ACEBC327098FA0F8E4A56E4FD7BB1CE37C7D2674/);
+  transform: scale(-1);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 0px -400px;
+}
+  
+p1 {
+  color: white;
+  line-height: 60px;
+  display: flex;
+  justify-content: center;
+  transform: scale(-1);
+}

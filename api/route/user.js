@@ -9,7 +9,8 @@ router.post('/', async function(req,res){
         //trả data response về cho client
         res.send(response)
     } catch (error) {
-        res.send(error)
+        console.log(error)
+        res.status(500).send(error)
     }
 })
 
@@ -18,6 +19,16 @@ router.get('/', async function(req,res){
         let response = await userController.getListUser(req.body)
         res.send(response)
     } catch (error) {
+        res.send(error)
+    }
+})
+
+router.get('/:email', async function(req,res){
+    try {
+        let response = await movieController.getUser(req.params.email)
+        res.send(response)
+    } catch (error) {
+        console.log(error)
         res.send(error)
     }
 })

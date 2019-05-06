@@ -22,5 +22,9 @@ router.get('/movie/:id', function(req, res, next) {
   let email = req.session.email
   res.render('moviedetail', { id: req.params.id, email: email});
 });
+router.get('/user/:email', function(req, res, next) {
+  let email = req.session.email
+  res.render('profileuser', { email: email});
+});
 
 module.exports = router;

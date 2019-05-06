@@ -13,9 +13,10 @@ app.controller('signupController', function ($scope, $http) {
                     setTimeout(() => {
                         window.location.href = '/'
                     }, 100);
-                }
+                } 
             }).catch(function (res) {
                 console.log(res)
+                window.alert(res.data.errorMessage)
             })
         }
     }

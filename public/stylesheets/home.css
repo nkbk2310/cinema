@@ -12,7 +12,7 @@ body {
 header{
     margin: 0 auto;
     width: 100%;
-    height: 350px;
+    height: 450px;
 }
 .header-cha{
     margin: 0;
@@ -23,19 +23,26 @@ header{
     background-repeat: no-repeat;
     
 }
-.header-con{
+.header-logo{
     float: left;
     width: 100%;
     height: 50%;
     margin-top: 15px;
+    margin-bottom: 15px;
+
 }
+
+/* .search2{
+    height: 100%;
+    width: 100px;
+} */
 
 .h1{
     display: flex;
     justify-content: center;
+    align-items: center;
     width: 100%;
-    height: 130%;
-    margin-bottom: 15px;
+    height: 100%;
 }
 
 .logo{
@@ -44,15 +51,39 @@ header{
     height: 190px;
 }
 
-.h2{
+.h1-search{
     display: flex;
     justify-content: center;
+    align-items: center;
     width: 100%;
-    height: 22%;
+    height: 10%;
+    margin-bottom: 10px;
 
 }
 
-.a1{
+.search1{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80%;
+    width: 300px;
+    color: white;
+    border: white 1px solid;
+    border-radius: 30px;
+}
+
+.h2{
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 10%;
+    margin-bottom: 10px;
+    
+}
+
+.a1,
+.a2{
     line-height: 38px;
     margin-left: 10px;
     margin-right: 10px; 
@@ -64,7 +95,8 @@ header{
 }
 
   
-.a1:hover{
+.a1:hover,
+.a2:hover{
     background: #6B90BF;
     cursor: pointer;
     color: white;
@@ -81,10 +113,12 @@ header{
 }
 
 .h3{
+    align-items: center;
     display: flex;
     justify-content: center;
     width: 100%;
-    height: auto;
+    height: 10%;
+    margin-bottom: 10px;
     color: white;
 
 }

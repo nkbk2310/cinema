@@ -4,11 +4,7 @@ const User = mongoose.model('User')
 
 async function createUser(data, req) {
     //Cách kiểm tra tenNguoiSuDung đã tồn tại & và thông báo "Tên người dùng đã tồn tại"
-    let user = await User.findOne({tenNguoiSuDung: data.tenDangNhap})
-    if (user) {
-        throw {errorMessage:'Tên người dùng đã tồn tại'}
-    }
-    user = await User.findOne({email: data.email})
+    let user = await User.findOne({email: data.email})
     if (user) {
         throw {errorMessage:'Email đã tồn tại'}
     }
@@ -26,6 +22,15 @@ async function createUser(data, req) {
     //trả dữ liệu về cho route 
     return {
         user: _user
+    }
+}
+
+const getUser = async (email) => {
+    let user = await User.findOne({
+        email:email
+    })
+    return {
+        user: user
     }
 }
 
@@ -55,4 +60,5 @@ module.exports = {
     createUser,
     getListUser,
     dangNhap,
+    getUser,
 }

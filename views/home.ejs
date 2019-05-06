@@ -30,65 +30,71 @@
 
   <header>
     <div class="header-cha">
-      <div class="header-con">
+      <div class="header-logo">
         <h class="h1">
           <img src="/images/logo cinema hot.png" class="logo" />
         </h>
-        <h class="h2">
-          <a class="a1 trangchu" href="/">
-            TRANG CHỦ
-          </a>
-          <% if (!email) { %>
-          <a class="a1 dangnhap" href="/signin">
-            ĐĂNG NHẬP
-          </a>
-          <a class="a1 dangky" href="/signup">
-            ĐĂNG KÝ
-          </a>
-          <% } else {%>
-          <a href="/movie/create" class="a1">
-            TẠO PHIM MỚI
-          </a>
-          <a href="" class="a1" ng-click="dangXuat()">
-            ĐĂNG XUẤT
-          </a>
-        </h>
-        <h class="h3">
-          <a class="a2">
-            <i class="fas fa-user icon-menu icon-username"></i>
-            {{username}}
-          </a>
-        </h>
-        <%}%>
       </div>
+      <div class="h1-search">
+        <a class="search1">
+          search
+        </a>
+      </div>
+      <div class="h2">
+        <a class="a1 trangchu" href="/">
+          TRANG CHỦ
+        </a>
+        <% if (!email) { %>
+        <a class="a1 dangnhap" href="/signin">
+          ĐĂNG NHẬP
+        </a>
+        <a class="a1 dangky" href="/signup">
+          ĐĂNG KÝ
+        </a>
+        <% } else {%>
+        <a href="/movie/create" class="a1">
+          TẠO PHIM MỚI
+        </a>
+        <a href="" class="a1" ng-click="dangXuat()">
+          ĐĂNG XUẤT
+        </a>
+      </div>
+      <div class="h3">
+        <a class="a2 profile" href="/user/profile">
+          <i class="fas fa-user icon-menu icon-username"></i>
+          {{username}}
+        </a>
+      </div>
+      <%}%>
+    </div>
     </div>
   </header>
 
   <div class="content">
     <div class="content-chung">
       <div class="content-con" ng-repeat="movie in movies">
-      <a href="/movie/{{movie._id}}">
-        <div class="content-con-1">
-          <img
-            ng-src="{{movie.hinhMinhHoa ? '/images/upload/' + movie.hinhMinhHoa : 'https://ae01.alicdn.com/kf/HTB1gfbapy0TMKJjSZFNq6y_1FXah/Star-Wars-The-Last-Jedi-Movie-Poster-Episode-VIII-2017-Film-Art-Silk-Fabric-Poster-36.jpg'}}"
-            class="content-img">
-          <div class="content-p">
-            <p class="p1">Tên phim: {{movie.tenPhim}}</p>
-            <p class="p1">Thể loại: {{movie.theLoai}}</p>
-            <p class="p1">Ngày phát hành: {{movie.thoiGianPhatHanh | date: 'dd/MM/yyyy'}}</p>
-            <p class="p1">Mô tả: {{movie.moTa}}</p>
+        <a href="/movie/{{movie._id}}">
+          <div class="content-con-1">
+            <img
+              ng-src="{{movie.hinhMinhHoa ? '/images/upload/' + movie.hinhMinhHoa : 'https://ae01.alicdn.com/kf/HTB1gfbapy0TMKJjSZFNq6y_1FXah/Star-Wars-The-Last-Jedi-Movie-Poster-Episode-VIII-2017-Film-Art-Silk-Fabric-Poster-36.jpg'}}"
+              class="content-img">
+            <div class="content-p">
+              <p class="p1">Tên phim: {{movie.tenPhim}}</p>
+              <p class="p1">Thể loại: {{movie.theLoai}}</p>
+              <p class="p1">Ngày phát hành: {{movie.thoiGianPhatHanh | date: 'dd/MM/yyyy'}}</p>
+              <p class="p1">Mô tả: {{movie.moTa}}</p>
+            </div>
           </div>
-        </div>
-      </a>
+        </a>
       </div>
     </div>
   </div>
 
   <footer>
-      <div class="footer-cha">
-        <p1>Copyright © Cinema Website 2017-2018</p1>
-      </div>
-    </footer>
+    <div class="footer-cha">
+      <p1>Copyright © Cinema Website 2017-2018</p1>
+    </div>
+  </footer>
 
 </body>
 
