@@ -31,9 +31,6 @@
                         TRANG CHỦ
                     </a>
                     <% if (!email) { %>
-                    <a href="/movie/detail" class="a1 danhsachphim">
-                        danh sách phim
-                    </a>
                     <a class="a1 dangnhap" href="/signin">
                         ĐĂNG NHẬP
                     </a>
@@ -43,9 +40,6 @@
                     <% } else {%>
                     <a href="/movie/create" class="a1 taophimmoi">
                         TẠO PHIM MỚI
-                    </a>
-                    <a class="a2 danhsachphim">
-                        danh sách phim
                     </a>
                     <a href="" class="a1" ng-click="dangXuat()">
                         ĐĂNG XUẤT
@@ -72,7 +66,7 @@
                         <div class="content-left">
                             <div class="content-img">
                                 <img class="img-chamh" id="hinhHienThi"
-                                    src="{{user.hinhDaiDien ? '/images/upload/' + user.hinhDaiDien : '/images/hinhDaiDien.png'}}">
+                                    ng-src="{{user.hinhDaiDien ? '/images/upload/' + user.hinhDaiDien : '/images/hinhDaiDien.png'}}" />
                             </div>
                         </div>
                         <div class="content-right">

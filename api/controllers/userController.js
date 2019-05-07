@@ -66,7 +66,7 @@ const editProfile = async (email, data) => {
     user.matKhau = data.matKhau
     let checkEmailUser = await User.findOne({ email: data.email })
     if (checkEmailUser) {
-        if (checkEmailUser._id !== user._id) {
+        if (checkEmailUser.id !== user.id) {
             throw { errorMessage: 'Email đã tồn tại'}
         }
     } else {

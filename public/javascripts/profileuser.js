@@ -44,6 +44,17 @@ app.controller('userController', function ($scope, $http) {
         });
     }
 
+    $("#hinhDuocChon").change(function () {
+        if (this.files && this.files[0]) {
+            var reader = new FileReader();
+            reader.onload = function (e) {
+                $('#hinhHienThi').attr('src', e.target.result);
+            }
+            reader.readAsDataURL(this.files[0]);
+            formData.append('hinh', this.files[0])
+        }
+    });
+
     $scope.luu = async () => {
         let hinh = formData.get('hinh')
         if (!luuKhongThanhCong($scope.user.tenNguoiSuDung, $scope.user.email)) {
@@ -59,7 +70,18 @@ app.controller('userController', function ($scope, $http) {
                 })
             }
         }
-    } 
+    }
+
+    $scope.dangXuat = () => {
+        if (confirm('Bạn có chắc có đăng xuất hay không?')) {
+            $http.get('/api/v1/user/dang-xuat', $scope.user).then(function (res) {
+                deleteCookie('username')
+                setTimeout(() => {
+                    window.location.href = '/'
+                }, 100);
+            })     
+        }
+    }
 })
 
 function luuKhongThanhCong(tenNguoiSuDung, email) {
