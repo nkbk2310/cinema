@@ -213,56 +213,101 @@ header{
   color: black;
   margin-top: 50px
 }
-.div-chung{
+.content1{
   float: left;
-  min-height: 359px
+  width: 100%;
+  height: 440px;
+  display: flex;
+  justify-content: center;
 }
 
-.div-left{
-  width: 48%;
-  height: 100px;
-  position: relative;
-  margin-top: 30px;
+.content1-cha{
+  display: flex;
+  justify-content: center;
+  width: 80%;
+  height: 100%;
 }
 
-.div-right{
-  width: 52%;
+.content-left{
+  float: left;
+  width: 40%;
+  height: 100%;
+  /* position: relative; */
+
+}
+
+.content-img{
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+
+}
+
+.img-chamh{
+  height: 100%;
+  width: 100%;
+  /* background-size: cover;
+  background-repeat: no-repeat; */
+  object-fit: contain;
+}
+
+
+.chamh-btn-icon{
+  transform: scale(0.87);
+  /* color: #404859; */
+  color: white;
+  float: left;
+  margin-left: 12px;
+  margin-top: 2px;
+}
+
+
+
+.content-right{
+  float: right;
+  width: 50%;
+  height: 100%;
+  margin-left: 70px;
+
 }
 
 .form{
   display: grid;
-  margin-top: 15px;
+  margin-top: 25px;
   font-size: 16px;
-  padding-left: 9%;
 }
 
 .form > input {
-  width: 61%;
   height: 35px;
   margin-top: 5px;
-  padding-left: 5px;
   font-size: 16px;
 }
+
 .text{
   height: 25px;
   width: 45%;
   margin-top: 5px;
   padding-left: 5px;
 }
+
 .input-chung1{
   width: 61%;
 }
+
 .text2{
   float: right;
 }
+
 .form > select ,
 .form > div > select{
-  width: 61%;
+  width: 100%;
   height: 35px;
   margin-top: 5px;
   padding-left: 5px;
   font-size: 14px;
 }
+
 .form > div > select{
   width: 45%;
   height: 35px;
@@ -270,8 +315,9 @@ header{
   padding-left: 5px;
   font-size: 14px;
 }
+
 .form > textarea {
-  width: 61%;
+  width: 100%%;
   height: 100px;
   margin-top: 5px;
   padding-left: 5px;
@@ -298,68 +344,109 @@ header{
 
 }
 
-#tao-phim-btn{
-  width: 150px;
-  height: 40px;
-  background-color: #6B90BF;
+
+
+.content2{
+  float: left;
+  width: 100%;
+  height: 70px;
+  display: flex;
+  justify-content: center;
+}
+
+.content2-cha{
+  display: flex;
+  justify-content: center;
+  width: 80%;
+  height: 100%;
+}
+
+.button-left{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40%;
+  height: 100%;
+
+
+}
+
+.bt-chonhinhanh{
   border-radius: 28px;
+  width: 220px;
+  height: 40px;
+}
+
+
+
+.button-right{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  float: right;
+  width: 50%;
+  height: 100%;
+  margin-left: 70px;
+}
+
+
+.content2-bt{
+  background-color: #6B90BF;
+  box-shadow: 0 4px 0px #516d91;
+  font-size: 18px;
+  color: white;
+  text-transform: uppercase;
+}
+
+.bt-huy{
+  border-radius: 28px;
+  width: 120px;
+  height: 40px;
+}
+
+.content2-bt-xoa{
+  background-color: red;
+  box-shadow: 0 4px 0px #910d0d;
+
   font-size: 18px;
   color: white;
   text-transform: uppercase;
 
 }
 
-.tao-phim-btn-icon{
+.bt-xoa{
+  border-radius: 28px;
+  width: 120px;
+  height: 40px;
+}
+
+.bt-chinhsua{
+  border-radius: 28px;
+  width: 170px;
+  height: 40px;
+}
+
+.icon-huy,
+.icon-chinhsua,
+.icon-chonhinhanh,
+.icon-xoa{
   transform: scale(0.87);
-  /* color: #404859; */
   color: white;
   float: left;
   margin-left: 12px;
   margin-top: 2px;
-
 }
 
-#tao-phim-btn:hover,
-.tao-phim-btn-icon:hover,
-#chamh-btn:hover{
+.content2-bt:hover{
   background: #dadee8;
   cursor: pointer;
-  }
+}
 
-  #chamh-btn{
-    width: 280px;
-    height: 45px;
-    border-radius: 28px;
-    background-color: #6B90BF;
-    font-size: 18px;
-    color: white;
-    text-transform: uppercase;
-  position: relative;
-    top: 15px;
-  left: 42%;
+.content2-bt-xoa:hover{
+  background: #edcece;
+  cursor: pointer;
+}
 
-  }
-  
-  .chamh-btn-icon{
-    transform: scale(0.87);
-    /* color: #404859; */
-    color: white;
-    float: left;
-    margin-left: 12px;
-    margin-top: 2px;
-    }
-
-    .img-chamh{ 
-      height: 70%;
-      width: 70%;
-      margin-left: 28%;
-    }
-
-    .img-chamh-div{
-      position: relative;
-      border-color: #9CAFD9;
-      border-width: 5px;
-    }
 
 
     

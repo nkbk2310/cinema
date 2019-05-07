@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    <link rel="icon" type="image/png" href="/images/1favicon_1.png" />
+  <link rel="icon" type="image/png" href="/images/1favicon_1.png" />
   <link rel='stylesheet' href='/stylesheets/taophimmoi.css' />
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
     integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
@@ -39,14 +39,14 @@
           <a class="a1 trangchu" href="/">
             TRANG CHỦ
           </a>
-          <% if (!email) { %>
+          <!-- <% if (!email) { %> -->
           <a class="a1 dangnhap" href="/signin">
             ĐĂNG NHẬP
           </a>
           <a class="a1 dangky" href="/signup">
             ĐĂNG KÝ
           </a>
-          <% } else {%>
+          <!-- <% } else {%> -->
           <a href="/movie/create" class="a1 taophimmoi">
             TẠO PHIM MỚI
           </a>
@@ -60,7 +60,7 @@
             {{username}}
           </a>
         </h>
-        <%}%>
+        <!-- <%}%> -->
       </div>
     </div>
   </header>
@@ -69,72 +69,99 @@
   <input type="file" id="hinhDuocChon" ng-hide="true" accept="image/*">
   <p class="title4">TẠO PHIM MỚI</p>
   <div>
-    <div class="div-left div-chung">
-      <div class="img-chamh-div">
-        <img class="img-chamh" id="hinhHienThi"
-          src="https://cdn.fstoppers.com/styles/large-16-9/s3/lead/2014/10/dani-diamond-posing-how-to-model-photogaphy-best-top-fstoppersb.jpg" />
-      </div>
-      <button id="chamh-btn" ng-click="chonHinh()">
+
+    <content class="content1">
+      <content class="content1-cha">
+        <div class="content-left">
+          <div class="content-img">
+            <img class="img-chamh" id="hinhHienThi"
+              src="https://cdn.fstoppers.com/styles/large-16-9/s3/lead/2014/10/dani-diamond-posing-how-to-model-photogaphy-best-top-fstoppersb.jpg" />
+          </div>
+          <!-- <button id="chamh-btn" ng-click="chonHinh()">
         <i class="fas fa-sign-out-alt chamh-btn-icon"></i>
         cho hình ảnh minh hoạ
-      </button>
-    </div>
-    <div class="div-right div-chung">
-      <div class="form div-center">
-        <label>Tên bộ phim:</label>
-        <input type="text" ng-model="movie.tenPhim">
-      </div>
-      <div class="form" class="div-center">
-        <label>Thể loại phim:</label>
-        <select ng-model="movie.theLoai">
-          <option style="display:none" value="">Chọn thể loại</option>
-          <option>Tiểu sử lịch sử</option>
-          <option>Lãng mạn tình cảm</option>
-          <option>Khoa học viễn tưởng</option>
-          <option>Huyền bí huyền ảo</option>
-          <option>Phiêu lưu mạo hiểm</option>
-          <option>Phát luật hình sự</option>
-          <option>Chiến tranh cổ trang</option>
-          <option>Hành động</option>
-          <option>Tâm lý</option>
-          <option>Kinh dị</option>
-          <option>Hài hước</option>
-          <option>Hoạt hình</option>
-          <option>Thể thao</option>
-          <option>Kinh điển</option>
-          <option>Vui nhộn</option>
-          <option>Cổ trang</option>
-          <option>Võ thuật</option>
-        </select>
-      </div>
-      <div class="form" class="div-center" placeholder="Email">
-        <label>Thời gian phát hành:</label>
-        <div class="input-chung1">
-          <input type="text" ng-model="movie.thoiGianPhatHanh" id="date">
+      </button> -->
         </div>
-      </div>
-      <div class="form" class="div-center">
-        <label>Nội dung mô tả:</label>
-        <textarea ng-model="movie.moTa"
-          placeholder="Điền thông tin của phim, diễn viên chính, nội dung của phim..."></textarea>
-      </div>
-    </div>
-    <div class="header3">
+        <div class="content-right">
+          <div class="form div-center">
+            <label>Tên bộ phim:</label>
+            <input type="text" ng-model="movie.tenPhim">
+          </div>
+          <div class="form div-center">
+            <label>
+              Thể loại phim:
+            </label>
+            <select ng-model="movie.theLoai">
+              <option style="display:none" value="">Chọn thể loại</option>
+              <option>Tiểu sử lịch sử</option>
+              <option>Lãng mạn tình cảm</option>
+              <option>Khoa học viễn tưởng</option>
+              <option>Huyền bí huyền ảo</option>
+              <option>Phiêu lưu mạo hiểm</option>
+              <option>Phát luật hình sự</option>
+              <option>Chiến tranh cổ trang</option>
+              <option>Hành động</option>
+              <option>Tâm lý</option>
+              <option>Kinh dị</option>
+              <option>Hài hước</option>
+              <option>Hoạt hình</option>
+              <option>Thể thao</option>
+              <option>Kinh điển</option>
+              <option>Vui nhộn</option>
+              <option>Cổ trang</option>
+              <option>Võ thuật</option>
+            </select>
+          </div>
+          <div class="form div-center" placeholder="Email">
+            <label>Thời gian phát hành:</label>
+            <div class="input-chung1">
+              <input type="text" ng-model="movie.thoiGianPhatHanh" id="date">
+            </div>
+          </div>
+          <div class="form div-center">
+            <label>Nội dung mô tả:</label>
+            <textarea ng-model="movie.moTa"
+              placeholder="Điền thông tin của phim, diễn viên chính, nội dung của phim..."></textarea>
+          </div>
+        </div>
+      </content>
+    </content>
+
+
+    <content class="content2">
+      <content class="content2-cha">
+        <div class="button-left">
+          <button class="content2-bt bt-chonhinhanh" ng-click="chonHinh()">
+            <i class="fa fa-upload fa-lg icon-chonhinhanh"></i>
+            chọn hình ảnh
+          </button>
+        </div>
+        <div class="button-right">
+          <button class="content2-bt bt-chinhsua" ng-click="taoPhim()">
+            <i class="fa fa-upload fa-lg icon-chinhsua"></i>
+            tạo phim
+          </button>
+        </div>
+      </content>
+    </content>
+
+
+    <!-- <div class="header3">
       <button id="tao-phim-btn" ng-click="taoPhim()">
         <i class="fa fa-upload fa-lg tao-phim-btn-icon"></i>
         tạo phim
       </button>
     </div>
-  </div>
+  </div> -->
 
 
-  <footer>
+    <footer>
       <div class="footer-cha">
         <p1>Copyright © Cinema Website 2017-2018</p1>
       </div>
     </footer>
 
- 
+
 </body>
 
 </html>

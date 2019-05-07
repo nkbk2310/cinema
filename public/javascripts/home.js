@@ -3,6 +3,7 @@ app.controller('homeController', function ($scope, $http) {
 
     $http.get('/api/v1/movie/', $scope.movie).then(function (res) {
         $scope.movies = res.data.ListMovie
+        $scope.moviesTemp = res.data.ListMovie
         $scope.username = getCookie('username')
     })
 
@@ -52,6 +53,13 @@ app.controller('homeController', function ($scope, $http) {
             })     
         }
     }
+
+    $('#search').keypress(function(e) {
+        $scope.movies.filter((movie)=>{
+            return movie.name.contain(e.target.value.toLowerCase())
+        })
+        // console.log(e.target.value)
+      });
     
 });
 
