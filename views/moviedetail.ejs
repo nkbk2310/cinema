@@ -126,9 +126,12 @@
                 </content>
 
 
+
                 <input type="file" id="hinhDuocChon" ng-hide="true" accept="image/*">
                 <content class="content2">
                     <content class="content2-cha">
+                            <% if (!email) { %>
+                                <% } else {%>
                         <div class="button-left">
                             <button class="content2-bt bt-chonhinhanh" ng-hide="!isEdit" ng-click="chonHinh()">
                                 <i class="fa fa-upload fa-lg icon-chonhinhanh"></i>
@@ -152,6 +155,8 @@
                                 <i class="fa fa-upload fa-lg icon-huy"></i>
                                 Lưu
                             </button>
+                              <%}%>
+
                         </div>
                     </content>
                 </content>
