@@ -21,5 +21,9 @@ var UserSchema = new Schema({
         type: Number,
         default: 0,
     },
+    hinhDaiDien: {
+        type: String,
+        default: ''
+    }
 })
 module.exports = mongoose.model('User', UserSchema)

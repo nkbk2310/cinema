@@ -4,9 +4,9 @@ const User = mongoose.model('User')
 
 async function createUser(data, req) {
     //Cách kiểm tra tenNguoiSuDung đã tồn tại & và thông báo "Tên người dùng đã tồn tại"
-    let user = await User.findOne({email: data.email})
+    let user = await User.findOne({ email: data.email })
     if (user) {
-        throw {errorMessage:'Email đã tồn tại'}
+        throw { errorMessage: 'Email đã tồn tại' }
     }
     // let user = new User()
     //apply lấy dữ liệu được chuyển từ dưới client lên server
@@ -15,6 +15,7 @@ async function createUser(data, req) {
     _user.matKhau = data.matKhau
     _user.email = data.email
     _user.ngayDangKy = Date.now()
+    _user.hinhDaiDien = data.hinhDaiDien || ''
 
     //lưu dữ liệu xuống database 
     _user = await _user.save()
@@ -39,20 +40,48 @@ const getListUser = async () => {
     return {
         ListUser: ListUser
     }
-} 
+}
 
 const dangNhap = async (user) => {
-    let logIn = await User.findOne({email: user.email})
+    let logIn = await User.findOne({ email: user.email })
     if (!logIn) {
-        throw {errorMessage:'Email hoặc mật khẩu không chính xác'}
+        throw { errorMessage: 'Email hoặc mật khẩu không chính xác' }
     }
     if (user.matKhau !== logIn.matKhau) {
-        throw {errorMessage:'Email hoặc mật khẩu không chính xác'}
+        throw { errorMessage: 'Email hoặc mật khẩu không chính xác' }
     }
     return {
         user: logIn
     }
-} 
+}
+
+// từ email kiếm ra thằng user để chỉnh sửa
+const editProfile = async (email, data) => {
+    let user = await User.findOne({ email: email })
+    if (!user) {
+        throw { errorMessage: 'Email không tồn tại' }
+    }
+    //đưa dữ liệu từ dưới client lên server
+    user.tenNguoiSuDung = data.tenNguoiSuDung
+    user.matKhau = data.matKhau
+    let checkEmailUser = await User.findOne({ email: data.email })
+    if (checkEmailUser) {
+        if (checkEmailUser._id !== user._id) {
+            throw { errorMessage: 'Email đã tồn tại'}
+        }
+    } else {
+        user.email = data.email
+    }
+    user.ngayDangKy = Date.now()
+    user.hinhDaiDien = data.hinhDaiDien || ''
+
+    user = await user.save()
+    //trả dữ liệu về cho route 
+    return {
+        user: user
+
+    }
+}
 
 
 
@@ -61,4 +90,5 @@ module.exports = {
     getListUser,
     dangNhap,
     getUser,
+    editProfile,
 }

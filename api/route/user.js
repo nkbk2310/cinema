@@ -12,15 +12,15 @@ router.get('/dang-xuat', async function(req,res){
     }
 })
 
-router.post('/', async function(req,res){
+
+router.get('/:email', async function(req,res){
     try {
-        //gọi hàm tạo phim trong userController để trả về data cho biến response
-        let response = await userController.createUser(req.body, req)
-        //trả data response về cho client
+        let response = await userController.getUser(req.params.email)
         res.send(response)
     } catch (error) {
         console.log(error)
-        res.status(500).send(error)
+        
+        res.send(error)
     }
 })
 
@@ -33,15 +33,32 @@ router.get('/', async function(req,res){
     }
 })
 
-router.get('/:email', async function(req,res){
+
+router.put('/:email', async function(req,res){
     try {
-        let response = await userController.getUser(req.params.email)
+        let response = await userController.editProfile(req.params.email, req.body)
+        //trả data response về cho client
+        req.session.email = response.user.email
         res.send(response)
     } catch (error) {
         console.log(error)
         res.send(error)
     }
 })
+
+
+router.post('/', async function(req,res){
+    try {
+        //gọi hàm tạo phim trong userController để trả về data cho biến response
+        let response = await userController.createUser(req.body, req)
+        //trả data response về cho client
+        res.send(response)
+    } catch (error) {
+        console.log(error)
+        res.status(500).send(error)
+    }
+})
+
 
 router.post('/dang-nhap', async function(req,res){
     try {

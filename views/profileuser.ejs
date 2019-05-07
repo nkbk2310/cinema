@@ -72,7 +72,7 @@
                         <div class="content-left">
                             <div class="content-img">
                                 <img class="img-chamh" id="hinhHienThi"
-                                    ng-src="{{movie.hinhMinhHoa ? '/images/upload/' + movie.hinhMinhHoa : 'https://ae01.alicdn.com/kf/HTB1gfbapy0TMKJjSZFNq6y_1FXah/Star-Wars-The-Last-Jedi-Movie-Poster-Episode-VIII-2017-Film-Art-Silk-Fabric-Poster-36.jpg'}}" />
+                                    src="{{user.hinhDaiDien ? '/images/upload/' + user.hinhDaiDien : '/images/hinhDaiDien.png'}}">
                             </div>
                         </div>
                         <div class="content-right">
@@ -80,16 +80,14 @@
                                 <label>
                                     Tên người dùng:
                                 </label>
-                                <input type="text" placeholder="{{user.tenDangNhap}}" disabled ng-hide="isEdit">
-                                <input type="text" ng-hide="!isEdit">
+                                <input type="text" ng-model="user.tenNguoiSuDung" ng-disabled="!isEdit">
 
                             </div>
                             <div class="form" class="div-center">
                                 <label>
                                     Email:
                                 </label>
-                                <input type="text" placeholder="{{user.email}}" disabled ng-hide="isEdit">
-                                <input type="text" ng-hide="!isEdit">
+                                <input type="email" ng-model="user.email" ng-disabled="!isEdit">
                             </div>
                         </div>
                     </content>

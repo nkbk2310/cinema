@@ -1,7 +1,7 @@
 const mongoose = require('mongoose')
 const Moive = mongoose.model('Movie')
 
-
+// tạo ra phim(movie) bằng data
 const createMovie = async (data) => {
     let movie = new Moive()
     //đưa dữ liệu từ dưới client lên server
@@ -20,6 +20,7 @@ const createMovie = async (data) => {
     }
 }
 
+
 const getListMovie = async () => {
     let ListMovie = await Moive.find().sort({ thoiGianTao: -1 })
     return {
@@ -27,6 +28,7 @@ const getListMovie = async () => {
     }
 }
 
+// từ cái id kiếm ra phim(movie) rồi gởi cho người dùng
 const getMovieDetail = async function (id) {
     let movie = await Moive.findById(id)
     if (!movie) {
@@ -38,7 +40,8 @@ const getMovieDetail = async function (id) {
 }
 
 // viết hàm chỉnh sửa
-const editMovie = async function (id, data) {
+// từ cái id kiếm ra phim(movie) để chỉnh sửa (data)
+const editMovie = async function (id, data) { 
     let movie = await Moive.findById(id)
     if (!movie) {
         throw { errorMessage: 'Không tìm thấy phim' }
@@ -58,6 +61,7 @@ const editMovie = async function (id, data) {
     }
 }
 
+//từ cái id kiếm ra phim(movie) để xoá(delete)
 const delMovie = async function (id) {
     let movie = await Moive.findById(id)
     if (!movie) {
