@@ -11,87 +11,11 @@ body {
    height:100%;
 }
 
-/* .title-link,
-.home-link{
-  text-decoration: none;
-}
-
-
-.header1{
-  margin: 0;
-  width: 100%;
-  height: 200px;
-  background-image: url(https://s4isystems.com/wp-content/uploads/2014/11/header-background-2.jpg);
-  background-repeat: no-repeat;
-  
-}
-.logo{
-  transform: scale(0.4);
-  display: block;
-  margin: auto;
-  position: relative;
-  top: -111px;
-
-}
-
-.header2{
-  background: linear-gradient(#215769,#033e52);
-  height: 40px;
-  padding-right: 20px;
-  padding-left: 25px;
-  
-}
-
-
-.header2-1{
-  float: right;
-  position: relative;
-  top: 6px;
-}
-
-h1{
-  float: left;
-  color: #0d5669;
-  margin: 0;
-  font-size: 18px;
-  line-height: 100px;
-  padding-left: 15px;
-  padding-right: 15px;
-
-}
-
-.header2-1 .h1{
-  float: right;
-  line-height: 30px;
-  margin-left: 10px;
-  margin-right: 10px; 
-  padding: 0 10px;
-  color: white;
-  font-size: 15px;
-  margin: 0;
-}
-.header2-2{
-  float: left;
-  position: relative;
-  top: 6px;
-}
-
-.h1:hover,
-.icon:hover{
-  background: #dadee8;
-  cursor: pointer;
-}
-
-.fas{
-  color: white;
-  
-} */
-
 header{
+    
   margin: 0 auto;
   width: 100%;
-  height: 350px;
-  margin-bottom: 100px;
+  height: 450px;
 }
 .header-cha{
   margin: 0;
@@ -102,37 +26,77 @@ header{
   background-repeat: no-repeat;
   
 }
-
-.header-con{
+.header-logo{
   float: left;
   width: 100%;
   height: 50%;
-  margin-top: 15px;
+  margin-bottom: 15px;
+
 }
+
+/* .search2{
+  height: 100%;
+  width: 100px;
+} */
 
 .h1{
   display: flex;
   justify-content: center;
+  align-items: center;
   width: 100%;
-  height: 130%;
-  margin-bottom: 15px;
+  height: 100%;
 }
 
 .logo{
-    margin-left: 5px;
-    width: 220px;
-    height: 190px;
+  margin-left: 5px;
+  width: 220px;
+  height: 190px;
 }
 
+
+
+.h1-search{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 10%;
+  margin-bottom: 10px;
+
+}
+
+.search{
+  width: 300px;
+  height: 30px;
+  border-radius: 20px;
+  padding-left: 13px;
+  font-size: 15px;
+  font-style: italic;
+}
+
+/* .search1{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80%;
+  width: 300px;
+  color: white;
+  border: white 1px solid;
+  border-radius: 30px;
+} */
+
 .h2{
+  align-items: center;
   display: flex;
   justify-content: center;
   width: 100%;
-  height: 22%;
-
+  height: 10%;
+  margin-bottom: 10px;
+  
 }
 
-.a1{
+.a1,
+.a2{
   line-height: 38px;
   margin-left: 10px;
   margin-right: 10px; 
@@ -144,7 +108,8 @@ header{
 }
 
 
-.a1:hover{
+.a1:hover,
+.a2:hover{
   background: #6B90BF;
   cursor: pointer;
   color: white;
@@ -161,51 +126,26 @@ header{
 }
 
 .h3{
+  align-items: center;
   display: flex;
-  justify-content: center;
+  justify-content: flex-end;
   width: 100%;
-  height: auto;
+  height: 12%;
   color: white;
-
 }
 
-.a2{
+.profile{
+  margin: 0;
+  border-radius: 30px 0 0 30px;
   line-height: 38px;
-  margin-left: 10px;
-  margin-right: 10px; 
+  background-color: #6B90BF;
   padding: 0 25px;
   font-size: 15px;
   text-decoration: none;
   font-weight: lighter;
+  color: white;
 }
 
-.icon-user{
-  zoom: 1.2;
-}
-.icon-sign-out{
-  zoom: 1.4;
-  position: relative;
-  top: 2px;
-}
-.icon-upload{
-  zoom: 0.9;
-}
-.icon-username{
-  transform: scale(1.3);
-  margin-right: 4px;
-}
-.icon-home{
-  zoom: 1.4;
-}
-.icon-back{
-  zoom: 1.4;
-  margin-left: 15px;
-
-}
-.icon{
-  padding: 0 5px;
-  line-height: 22px !important
-}
 
 .title4{
   text-align: center;

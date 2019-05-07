@@ -31,14 +31,24 @@
 
   <header>
     <div class="header-cha">
+
+        <% if (!email) { %>
+          <% } else {%>
+
+      <div class="h3">
+        <a class="profile" href="/user/profile">
+          <i class="fas fa-user icon-menu icon-username"></i>
+          {{username}}
+        </a>
+      </div>
+      <%}%>
+      
       <div class="header-logo">
         <h class="h1">
           <img src="/images/logo cinema hot.png" class="logo" />
         </h>
       </div>
-      <div class="h1-search">
-        <input type="text" placeholder="search" id="search">
-      </div>
+
       <div class="h2">
         <a class="a1 trangchu" href="/">
           TRANG CHỦ
@@ -57,14 +67,11 @@
         <a href="" class="a1" ng-click="dangXuat()">
           ĐĂNG XUẤT
         </a>
+        <%}%>
       </div>
-      <div class="h3">
-        <a class="a2 profile" href="/user/profile">
-          <i class="fas fa-user icon-menu icon-username"></i>
-          {{username}}
-        </a>
-      </div>
-      <%}%>
+      <div class="h1-search">
+          <input class="search" type="text" placeholder="search" id="search" ng-model="searchValue">
+        </div>
     </div>
     </div>
   </header>

@@ -50,17 +50,30 @@ app.controller('homeController', function ($scope, $http) {
                 setTimeout(() => {
                     window.location.href = '/'
                 }, 100);
-            })     
+            })
         }
     }
 
-    $('#search').keypress(function(e) {
-        $scope.movies.filter((movie)=>{
-            return movie.name.contain(e.target.value.toLowerCase())
-        })
-        // console.log(e.target.value)
-      });
+    // $('#search').keypress(function(e) {
+    // console.log(e.target.value)
+    // $scope.movies.filter((movie)=>{
+    //     return movie.name.includes(e.target.value.toLowerCase())
+    // })
+    //   });
+
     
+    // gắng movie tạm(moviesTemp) vào movie để khi xoá nội dung search sẽ ko bị mất movie ban đầu
+    $('#search').keyup(function (e) {
+        if ($scope.searchValue.toLowerCase() == "") {
+            $scope.movies = $scope.moviesTemp
+            $scope.$apply()
+        } else{
+            $scope.movies = $scope.moviesTemp.filter((movie) => {
+                return movie.tenPhim.toLowerCase().includes($scope.searchValue.toLowerCase())
+            })
+        }
+
+    })
 });
 
 

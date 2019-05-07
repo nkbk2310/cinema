@@ -31,39 +31,42 @@
 
   <header>
     <div class="header-cha">
-      <div class="header-con">
+      <% if (!email) { %>
+      <% } else {%>
+      <div class="h3">
+        <a class="profile" href="/user/profile">
+          <i class="fas fa-user icon-menu icon-username"></i>
+          {{username}}
+        </a>
+      </div>
+      <%}%>
+      <div class="header-logo">
         <h class="h1">
           <img src="/images/logo cinema hot.png" class="logo" />
         </h>
-        <h class="h2">
-          <a class="a1 trangchu" href="/">
-            TRANG CHỦ
-          </a>
-          <!-- <% if (!email) { %> -->
-          <a class="a1 dangnhap" href="/signin">
-            ĐĂNG NHẬP
-          </a>
-          <a class="a1 dangky" href="/signup">
-            ĐĂNG KÝ
-          </a>
-          <!-- <% } else {%> -->
-          <a href="/movie/create" class="a1 taophimmoi">
-            TẠO PHIM MỚI
-          </a>
-          <a href="" class="a1" ng-click="dangXuat()">
-            ĐĂNG XUẤT
-          </a>
-        </h>
-        <h class="h3">
-          <a class="a2">
-            <i class="fas fa-user icon-menu icon-username"></i>
-            {{username}}
-          </a>
-        </h>
-        <!-- <%}%> -->
       </div>
-    </div>
+      <div class="h2">
+        <a class="a1 trangchu" href="/">
+          TRANG CHỦ
+        </a>
+        <% if (!email) { %>
+        <a class="a1 dangnhap" href="/signin">
+          ĐĂNG NHẬP
+        </a>
+        <a class="a1 dangky" href="/signup">
+          ĐĂNG KÝ
+        </a>
+        <% } else {%>
+        <a href="/movie/create" class="a1">
+          TẠO PHIM MỚI
+        </a>
+        <a href="" class="a1" ng-click="dangXuat()">
+          ĐĂNG XUẤT
+        </a>
+        <%}%>
+      </div>
   </header>
+
 
 
   <input type="file" id="hinhDuocChon" ng-hide="true" accept="image/*">
