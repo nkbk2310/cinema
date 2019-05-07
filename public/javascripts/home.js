@@ -49,12 +49,10 @@ app.controller('homeController', function ($scope, $http) {
                 setTimeout(() => {
                     window.location.href = '/'
                 }, 100);
-            })
-        } else {
-            // Do nothing!
+            })     
         }
-        
     }
+    
 });
 
 

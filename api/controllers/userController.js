@@ -27,7 +27,7 @@ async function createUser(data, req) {
 
 const getUser = async (email) => {
     let user = await User.findOne({
-        email:email
+        email: email
     })
     return {
         user: user

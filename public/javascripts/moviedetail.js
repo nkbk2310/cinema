@@ -35,7 +35,7 @@ app.controller('moviedetailController', function ($scope, $http) {
                 $http.put('/api/v1/movie/'+id, $scope.movie).then(function (res) {
                     setTimeout(() => {
                     $scope.isEdit = false
-                    window.location.reload()
+                    window.location.href = '/'
                     }, 100);
                 })
             }
@@ -47,7 +47,7 @@ app.controller('moviedetailController', function ($scope, $http) {
             $http.delete('/api/v1/movie/'+id).then(function (res) {
                 setTimeout(() => {
                     window.location.href = '/'
-                }, 100)
+                }, 100);
             })
         }
     }
@@ -85,7 +85,7 @@ app.controller('moviedetailController', function ($scope, $http) {
                 $http.put('/api/v1/movie/'+id, $scope.movie).then(function (res) {
                     setTimeout(() => {
                     $scope.isEdit = false
-                    window.location.reload()
+                    window.location.href = '/'
                     }, 100);
                 })
             }

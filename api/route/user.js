@@ -2,6 +2,16 @@ const express = require ('express')
 const router = express.Router()
 const userController = require('../controllers/userController')
 
+
+router.get('/dang-xuat', async function(req,res){
+    try {
+        req.session.email = undefined
+        res.status(200).send()
+    } catch (error) {
+        res.status(500).send(error)
+    }
+})
+
 router.post('/', async function(req,res){
     try {
         //gọi hàm tạo phim trong userController để trả về data cho biến response
@@ -25,7 +35,7 @@ router.get('/', async function(req,res){
 
 router.get('/:email', async function(req,res){
     try {
-        let response = await movieController.getUser(req.params.email)
+        let response = await userController.getUser(req.params.email)
         res.send(response)
     } catch (error) {
         console.log(error)
@@ -43,13 +53,5 @@ router.post('/dang-nhap', async function(req,res){
     }
 })
 
-router.get('/dang-xuat', async function(req,res){
-    try {
-        req.session.email = undefined
-        res.status(200).send()
-    } catch (error) {
-        res.status(500).send(error)
-    }
-})
 
 module.exports = router

@@ -7,6 +7,7 @@ body {
   margin:0;
    padding:0;
    height:100%;
+
 }
 
 header{
@@ -292,13 +293,29 @@ header{
 
 .content2-bt{
   background-color: #6B90BF;
+  box-shadow: 0 4px 0px #516d91;
+  font-size: 18px;
+  color: white;
+  text-transform: uppercase;
+}
+
+.bt-huy{
+  border-radius: 28px;
+  width: 120px;
+  height: 40px;
+}
+
+.content2-bt-xoa{
+  background-color: red;
+  box-shadow: 0 4px 0px #910d0d;
+
   font-size: 18px;
   color: white;
   text-transform: uppercase;
 
 }
 
-.bt-huy{
+.bt-xoa{
   border-radius: 28px;
   width: 120px;
   height: 40px;
@@ -312,7 +329,8 @@ header{
 
 .icon-huy,
 .icon-chinhsua,
-.icon-chonhinhanh{
+.icon-chonhinhanh,
+.icon-xoa{
   transform: scale(0.87);
   color: white;
   float: left;
@@ -322,6 +340,11 @@ header{
 
 .content2-bt:hover{
   background: #dadee8;
+  cursor: pointer;
+}
+
+.content2-bt-xoa:hover{
+  background: #edcece;
   cursor: pointer;
 }
 

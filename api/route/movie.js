@@ -39,7 +39,7 @@ router.get('/:id', async function(req,res){
 // gọi hàm chỉnh sửa trong movieController để trả về data
 router.put('/:id', async function(req,res){
     try {
-        let response = await movieController.delMovie(req.body)
+        let response = await movieController.editMovie(req.params.id, req.body)
         //trả data response về cho client
         res.send(response)
     } catch (error) {
